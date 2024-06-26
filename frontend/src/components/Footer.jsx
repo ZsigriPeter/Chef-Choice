@@ -3,7 +3,7 @@ function Footer() {
     return (
         <div className="footer">
             <footer className="footer">
-                <div className="nav-bar">
+                <div className="footer-nav-bar">
                     <nav>
                         <ul className="nav-links">
                             <li><a href="/main">FAQ</a></li>

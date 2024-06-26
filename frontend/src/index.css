@@ -13,19 +13,19 @@ code {
 }
 
 nav{
-  position: fixed;
-  z-index: 99;
+  position: sticky;
+  /*z-index: 99;*/
   width: 100%;
   
   background: #242526;
 }
 
 nav .nav-bar {
-  position: relative;
-  max-width: 1300px;
-  padding: 0px 30px;
-  height: 70px;
-  line-height: 70px;
+  /*position: relative;*/
+  max-width: 130em;
+  padding: 0 3em;
+  height: 7em;
+  line-height: 7em;
   margin: auto;
   display: flex;
   align-items: center;
@@ -33,6 +33,9 @@ nav .nav-bar {
 }
 
 .nav-bar .nav-links{
+  display: inline-flex;
+}
+.footer-nav-bar .nav-links{
   display: inline-flex;
 }
 
@@ -43,10 +46,10 @@ nav .nav-bar {
 .nav-links li a{
   color: #f2f2f2;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.15em;
   font-weight: 500;
-  padding: 9px 15px;
-  border-radius: 5px;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
   transition: all 0.3s ease;
 }
 
@@ -54,30 +57,56 @@ nav .nav-bar {
   background: #3A3B3C;
 }
 
+nav .nav-bar {
+  /*position: relative;*/
+  max-width: 100em;
+  padding: 0 3em;
+  height: 7em;
+  line-height: 7em;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .content {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 50px;
-  color: black;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  background: black;
 }
 
 .footer {
   background-color: #242526;
   color: white;
+  display: flex;
 }
 
-.footer .nav-bar {
-  width: 400px;
+.footer-nav-bar {
+  max-width: 130em;
+  padding: 0 3em;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .footer .nav-bar nav {
   width: fit-content;
 }
 .contacts {
   display: flex;
-  height: 60px;
-  margin: 0 0 0 600px;
-  padding-top: 10px;
+  height: 4em;
+  margin: 0 0 0 15em;
+  padding-top: 1em;
+  width: fit-content;
 }
 .mail-phone {
-  padding-left: 20px;
+  padding-left: 1em;
+}
+
+.sideMenu{
+  margin: 0;
+  padding: 1em;
+  width: 20vw;
+  background: #242526;
 }

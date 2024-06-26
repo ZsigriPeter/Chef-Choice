@@ -9,7 +9,7 @@ function NavBar() {
                 <nav>
                     <img src="" className="logo-img" alt="logo of the webpage"></img>
                     <ul className="nav-links">
-                        <li><a href="/main">Weekly menu</a></li>
+                        <li><a href="/weekly-menu">Weekly menu</a></li>
                         <li><a href="/">Food list</a></li>
                         <li><a href="/">Orders</a></li>
                         <li><a href="/">Favorites</a></li>
