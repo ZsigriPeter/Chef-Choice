@@ -56,5 +56,28 @@ nav .nav-bar {
 
 .content {
   padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
   color: black;
+}
+
+.footer {
+  background-color: #242526;
+  color: white;
+}
+
+.footer .nav-bar {
+  width: 400px;
+}
+.footer .nav-bar nav {
+  width: fit-content;
+}
+.contacts {
+  display: flex;
+  height: 60px;
+  margin: 0 0 0 600px;
+  padding-top: 10px;
+}
+.mail-phone {
+  padding-left: 20px;
 }
