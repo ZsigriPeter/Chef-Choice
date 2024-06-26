@@ -1,7 +1,6 @@
 function Footer() {
 
     return (
-        <div className="footer">
             <footer className="footer">
                 <div className="footer-nav-bar">
                     <nav>
@@ -23,7 +22,6 @@ function Footer() {
                     </div>
                 </div>
             </footer>
-        </div>
     );
 }
 

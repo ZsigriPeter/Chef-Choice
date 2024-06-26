@@ -12,20 +12,17 @@ code {
     monospace;
 }
 
-nav{
-  position: sticky;
-  /*z-index: 99;*/
+.nav-bar{
   width: 100%;
-  
+  position: sticky;
+  top: 0;
   background: #242526;
 }
 
-nav .nav-bar {
-  /*position: relative;*/
+nav {
   max-width: 130em;
   padding: 0 3em;
-  height: 7em;
-  line-height: 7em;
+  height: 5em;
   margin: auto;
   display: flex;
   align-items: center;
@@ -57,18 +54,6 @@ nav .nav-bar {
   background: #3A3B3C;
 }
 
-nav .nav-bar {
-  /*position: relative;*/
-  max-width: 100em;
-  padding: 0 3em;
-  height: 7em;
-  line-height: 7em;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .content {
   padding-top: 1em;
   padding-bottom: 1em;
@@ -80,23 +65,24 @@ nav .nav-bar {
   background-color: #242526;
   color: white;
   display: flex;
+  justify-content: space-between;
 }
 
 .footer-nav-bar {
   max-width: 130em;
-  padding: 0 3em;
-  margin: auto;
+  /*padding: 0 3em;*/
+  /*margin: auto;*/
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /*align-items: center;*/
+  /*justify-content: space-between;*/
 }
-.footer .nav-bar nav {
+/*.footer .nav-bar nav {
   width: fit-content;
-}
+}*/
 .contacts {
   display: flex;
   height: 4em;
-  margin: 0 0 0 15em;
+  margin-right: 5em;
   padding-top: 1em;
   width: fit-content;
 }
@@ -104,15 +90,16 @@ nav .nav-bar {
   padding-left: 1em;
 }
 
-.sideMenu{
+.sideMenuBar{
   margin: 0;
   padding: 1em;
-  width: 20vw;
+  width: 17vw;
   background: #242526;
   color: white;
+
 }
 
-.sideMenu p{
+.sideMenuBar p{
   color: #f2f2f2;
   text-decoration: none;
   font-size: 1.15em;
@@ -122,6 +109,49 @@ nav .nav-bar {
   transition: all 0.3s ease;
 }
 
-.sideMenu p:hover{
+.sideMenuBar p:hover{
   background: #3A3B3C;
+}
+
+.weeklyMenu{
+  padding-left: 1em;
+}
+
+.weeklyMenuPage{
+  display: flex;
+}
+
+.activeMenu {
+}
+
+.menuRow{
+  display: flex;
+  margin-top: 1em;
+}
+.dishList{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dishDiv{
+  background: white;
+  min-width: 13em;
+  max-width: 30em;
+}
+.courseType{
+  width: 7em;
+  max-height: 5em;
+  background: red;
+  padding: 0;
+}
+.rowCode{
+  width: 2em;
+  max-height: 5em;
+
+  background: yellow;
+
+}
+
+.mainPageMessage{
+ color: white;
 }

@@ -1,13 +1,12 @@
 import MenuRow from "./MenuRow";
 
-function WeeklyMenu({menu}) {
+function WeeklyMenu({weeklyMenu}) {
 
     return (
-        <div>{menu && menu.map((menuRow) => {
-            return (
-                <MenuRow menuRow={menuRow}/>
-            )
-        })}
+        <div className="active-menu">
+                {weeklyMenu && weeklyMenu.menuRows.map((menuRow) => {
+                    return <MenuRow menuRow={menuRow}/>
+                })}
         </div>
     )
 }

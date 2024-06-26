@@ -1,7 +1,7 @@
 import Dish from "./Dish";
 
 function DishList({dishes}) {
-    return (<div>
+    return (<div className="dishList">
         {dishes.map((dish) => {
             return (
                 <Dish dish={dish}/>

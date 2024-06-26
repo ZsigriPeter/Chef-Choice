@@ -1,5 +1,6 @@
 import {Outlet} from 'react-router-dom';
 import Footer from './Footer';
+import {hasPointerEvents} from "@testing-library/user-event/dist/utils";
 
 function NavBar() {
 
