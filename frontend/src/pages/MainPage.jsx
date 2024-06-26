@@ -7,21 +7,7 @@ function MainPage() {
             <h2>
                 Welcome to ... !
             </h2>
-            <h2>
-                Welcome to ... !
-            </h2>
-            <h2>
-                Welcome to ... !
-            </h2>
-            <h2>
-                Welcome to ... !
-            </h2>
-            <h2>
-                Welcome to ... !
-            </h2>
-            <h2>
-                Welcome to ... !
-            </h2>
+            <img src="" alt="Main Page"/>
         </div>
     );
 }
