@@ -14,4 +14,11 @@ public class Dish {
     private int stock;
     private List<Allergen> allergens;
 
+    public Dish(int id, String name, String description, String imageURL, double price) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.imageURL = imageURL;
+        this.price = price;
+    }
 }
