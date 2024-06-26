@@ -13,10 +13,14 @@ function Footer() {
                     </nav>
                 </div>
                 <div className="contacts">
-                    <span>Contact us: </span>
-                    <span>contact@mail.com</span>
-                    <br/>
-                    <span>+36 20 5556677</span>
+                    <div>
+                        <span>Contact us: </span>
+                    </div>
+                    <div className="mail-phone">
+                        <span>contact@mail.com</span>
+                        <br/>
+                        <span>+36 20 5556677</span>
+                    </div>
                 </div>
             </footer>
         </div>

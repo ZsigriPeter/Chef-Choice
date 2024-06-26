@@ -73,7 +73,11 @@ nav .nav-bar {
   width: fit-content;
 }
 .contacts {
+  display: flex;
   height: 60px;
   margin: 0 0 0 600px;
   padding-top: 10px;
+}
+.mail-phone {
+  padding-left: 20px;
 }
