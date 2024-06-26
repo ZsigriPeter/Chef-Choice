@@ -20,4 +20,20 @@ public class WeeklyMenu {
     public void addMenuRow(MenuRow menuRow) {
         menuRows.add(menuRow);
     }
+
+    public int getWeek() {
+        return week;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public List<MenuRow> getMenuRows() {
+        return menuRows;
+    }
 }
