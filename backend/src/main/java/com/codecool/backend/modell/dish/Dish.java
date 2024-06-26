@@ -1,4 +1,6 @@
-package com.codecool.backend.modell;
+package com.codecool.backend.modell.dish;
+
+import java.util.List;
 
 public class Dish {
     private int id;
@@ -10,6 +12,6 @@ public class Dish {
     private double averageRating;
     private double weight;
     private int stock;
-    private Allergen allergen;
+    private List<Allergen> allergens;
 
 }
