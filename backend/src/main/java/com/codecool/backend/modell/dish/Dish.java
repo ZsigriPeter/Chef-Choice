@@ -21,4 +21,24 @@ public class Dish {
         this.imageURL = imageURL;
         this.price = price;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 }

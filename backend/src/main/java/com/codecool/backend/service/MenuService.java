@@ -14,6 +14,12 @@ public class MenuService {
     private MenuRowDAO menuRowDAO;
     private DishDAO dishDAO;
 
+    public MenuService(MenuDAO menuDAO, MenuRowDAO menuRowDAO, DishDAO dishDAO) {
+        this.menuDAO = menuDAO;
+        this.menuRowDAO = menuRowDAO;
+        this.dishDAO = dishDAO;
+    }
+
     public WeeklyMenu getMenu() {
         WeeklyMenu menu = menuDAO.getMenu();
 

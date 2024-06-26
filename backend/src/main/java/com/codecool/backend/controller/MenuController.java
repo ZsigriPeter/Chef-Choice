@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DishController {
+public class MenuController {
 
     @Autowired
     private DishService dishService;
@@ -18,7 +18,7 @@ public class DishController {
     private MenuService menuService;
 
     @GetMapping("/weekly-menu")
-    public WeeklyMenu getDishes() {
+    public WeeklyMenu getMenu() {
         return menuService.getMenu();
     }
 

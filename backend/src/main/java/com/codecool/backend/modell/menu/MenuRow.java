@@ -20,4 +20,16 @@ public class MenuRow {
     public void addDish(Dish dish) {
         dishes.add(dish);
     }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public List<Dish> getDishes() {
+        return dishes;
+    }
 }
