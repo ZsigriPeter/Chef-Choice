@@ -17,7 +17,9 @@ function WeeklyMenu() {
 
     return (
         <div>{menu && menu.map((menuRow) => {
-            <MenuRow menuRow={menuRow}/>
+            return (
+                <MenuRow menuRow={menuRow}/>
+            )
         })}
         </div>
     )

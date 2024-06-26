@@ -1,10 +1,13 @@
 import Dish from "./Dish";
 
-function DishList({dishes}){
+function DishList({dishes}) {
     return (<div>
-        {dishes.map((dish)=>{
-            <Dish dish={dish}/>
+        {dishes.map((dish) => {
+            return (
+                <Dish dish={dish}/>
+            )
         })}
     </div>)
 }
+
 export default DishList
