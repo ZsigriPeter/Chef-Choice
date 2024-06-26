@@ -1,8 +1,8 @@
 function SideMenu(){
     return(<div className="sideMenu">
-        <h3>Soups</h3>
-        <h3>Main dishes</h3>
-        <h3>Desserts</h3>
+        <p>Soups</p>
+        <p>Main dishes</p>
+        <p>Desserts</p>
     </div>)
 }
 export default SideMenu
