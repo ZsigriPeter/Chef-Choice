@@ -16,22 +16,16 @@ function MainPage() {
     }, []);
 
     return (
-        <div className="content">
+        <div className="mainPage">
             {
                 data ? (
-                    <>
-                        <h2 className="mainPageMessage">
-                            {data.message}
-                        </h2>
-                        <img src={data.pictureUrl} alt="Main Page"/>
-                    </>
+                    <h2 className="mainPageMessage">
+                        {data.message}
+                    </h2>
                 ) : (
-                    <>
-                        <h2>
-                            Welcome to ... !
-                        </h2>
-                        <img src="" alt="Main Page"/>
-                    </>
+                    <h2 className="mainPageMessage">
+                        Welcome to ... !
+                    </h2>
                 )
             }
         </div>

@@ -154,4 +154,23 @@ nav {
 
 .mainPageMessage{
  color: white;
+  text-shadow: black 0.5rem 0.5rem 1rem;
+  font-size: 2.5em;
+  margin: auto;
+  max-width: fit-content;
+  padding: 0.3em;
+  background-color: rgb(1,1,1,0.6);
+  border-radius: 20px;
+}
+
+.mainPage {
+  background-image: url('./imgs/mainpage.jpg');
+  min-height: 500px;
+  height: 800px;
+  background-repeat: no-repeat;
+  background-position: center bottom 10px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+
 }

@@ -24,6 +24,6 @@ public class MenuController {
 
     @GetMapping("/main-page")
     public MainPageDTO getMainPageContent() {
-        return new MainPageDTO("Daily message", "picture URL");
+        return new MainPageDTO("Welcome to Chef Choice", "picture URL");
     }
 }
