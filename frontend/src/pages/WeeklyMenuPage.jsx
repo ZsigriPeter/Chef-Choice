@@ -21,13 +21,13 @@ function WeeklyMenuPage() {
             <SideMenuBar/>
             {
                 menu && <div className="weeklyMenu">
-                    <button>
+                    <button className={"weekTab"}>
                         <WeekDateTab menu={menu}/>
                     </button>
-                    <button>
+                    <button className={"weekTab"}>
                         <WeekDateTab menu={menu}/>
                     </button>
-                    <button>
+                    <button className={"weekTab"}>
                         <WeekDateTab menu={menu}/>
                     </button>
 
