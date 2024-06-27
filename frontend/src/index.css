@@ -12,20 +12,17 @@ code {
     monospace;
 }
 
-nav{
-  position: fixed;
-  z-index: 99;
+.nav-bar{
   width: 100%;
-  
+  position: sticky;
+  top: 0;
   background: #242526;
 }
 
-nav .nav-bar {
-  position: relative;
-  max-width: 1300px;
-  padding: 0px 30px;
-  height: 70px;
-  line-height: 70px;
+nav {
+  max-width: 130em;
+  padding: 0 3em;
+  height: 5em;
   margin: auto;
   display: flex;
   align-items: center;
@@ -33,6 +30,9 @@ nav .nav-bar {
 }
 
 .nav-bar .nav-links{
+  display: inline-flex;
+}
+.footer-nav-bar .nav-links{
   display: inline-flex;
 }
 
@@ -43,10 +43,10 @@ nav .nav-bar {
 .nav-links li a{
   color: #f2f2f2;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.15em;
   font-weight: 500;
-  padding: 9px 15px;
-  border-radius: 5px;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
   transition: all 0.3s ease;
 }
 
@@ -55,29 +55,103 @@ nav .nav-bar {
 }
 
 .content {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 50px;
-  color: black;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  background: black;
 }
 
 .footer {
   background-color: #242526;
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
-.footer .nav-bar {
-  width: 400px;
+.footer-nav-bar {
+  max-width: 130em;
+  /*padding: 0 3em;*/
+  /*margin: auto;*/
+  display: flex;
+  /*align-items: center;*/
+  /*justify-content: space-between;*/
 }
-.footer .nav-bar nav {
+/*.footer .nav-bar nav {
   width: fit-content;
-}
+}*/
 .contacts {
   display: flex;
-  height: 60px;
-  margin: 0 0 0 600px;
-  padding-top: 10px;
+  height: 4em;
+  margin-right: 5em;
+  padding-top: 1em;
+  width: fit-content;
 }
 .mail-phone {
-  padding-left: 20px;
+  padding-left: 1em;
+}
+
+.sideMenuBar{
+  margin: 0;
+  padding: 1em;
+  width: 17vw;
+  background: #242526;
+  color: white;
+
+}
+
+.sideMenuBar p{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1.15em;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  transition: all 0.3s ease;
+}
+
+.sideMenuBar p:hover{
+  background: #3A3B3C;
+}
+
+.weeklyMenu{
+  padding-left: 1em;
+}
+
+.weeklyMenuPage{
+  display: flex;
+}
+
+.activeMenu {
+}
+
+.menuRow{
+  display: flex;
+  margin-top: 1em;
+}
+.dishList{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dishDiv{
+  background: white;
+  min-width: 13em;
+  max-width: 30em;
+}
+.courseType{
+  width: 7em;
+  max-height: 5em;
+  background: red;
+  padding: 0;
+}
+.rowCode{
+  width: 2em;
+  max-height: 5em;
+
+  background: yellow;
+
+}
+
+.mainPageMessage{
+ color: white;
 }

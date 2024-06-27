@@ -20,7 +20,7 @@ function MainPage() {
             {
                 data ? (
                     <>
-                        <h2>
+                        <h2 className="mainPageMessage">
                             {data.message}
                         </h2>
                         <img src={data.pictureUrl} alt="Main Page"/>
