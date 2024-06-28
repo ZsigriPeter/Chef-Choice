@@ -6,6 +6,7 @@ import com.codecool.backend.dao.MenuRowDAO;
 import com.codecool.backend.modell.dish.Dish;
 import com.codecool.backend.modell.menu.MenuRow;
 import com.codecool.backend.modell.menu.WeeklyMenu;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,7 @@ public class MenuService {
     private MenuRowDAO menuRowDAO;
     private DishDAO dishDAO;
 
+    @Autowired
     public MenuService(MenuDAO menuDAO, MenuRowDAO menuRowDAO, DishDAO dishDAO) {
         this.menuDAO = menuDAO;
         this.menuRowDAO = menuRowDAO;
