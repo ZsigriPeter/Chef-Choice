@@ -1,0 +1,42 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+enum Allergen << enumeration >> {
+  - Allergen(int, String): 
+   name: String
+   id: int
+}
+enum Course << enumeration >> {
+  + Course(): 
+}
+class Dish {
+  + Dish(int, String, String, String, double): 
+   name: String
+   description: String
+   id: int
+   price: double
+   imageURL: String
+}
+class MenuRow {
+  + MenuRow(Course, String): 
+   course: Course
+   code: String
+   dishes: List<Dish>
+}
+class WeeklyMenu {
+  + WeeklyMenu(int, LocalDate, LocalDate): 
+   endDate: LocalDate
+   week: int
+   startDate: LocalDate
+   menuRows: List<MenuRow>
+}
+
+Dish       "1" *-[#595959,plain]-> "allergens\n*" Allergen   
+Dish       "1" *-[#595959,plain]-> "course\n1" Course     
+MenuRow    "1" *-[#595959,plain]-> "course\n1" Course     
+MenuRow    "1" *-[#595959,plain]-> "dishes\n*" Dish       
+WeeklyMenu "1" *-[#595959,plain]-> "menuRows\n*" MenuRow    
+@enduml
