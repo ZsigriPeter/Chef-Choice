@@ -1,27 +1,33 @@
 package com.codecool.backend.modell.menu;
 
-import com.codecool.backend.modell.dish.Course;
 import com.codecool.backend.modell.dish.Dish;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class MenuRow {
-    private Course course;
+    @Id
+    @GeneratedValue
+    private Long id;
+    @ManyToOne
+    private CourseType course;
     private String code;
+    @OneToMany
     private List<Dish> dishes;
 
-    public MenuRow(Course course, String code) {
+    public MenuRow(CourseType course, String code) {
         this.course = course;
         this.code = code;
         this.dishes = new ArrayList<>();
     }
 
-    public void addDish(Dish dish) {
-        dishes.add(dish);
+    public MenuRow() {
     }
 
-    public Course getCourse() {
+
+    public CourseType getCourse() {
         return course;
     }
 
@@ -31,5 +37,9 @@ public class MenuRow {
 
     public List<Dish> getDishes() {
         return dishes;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

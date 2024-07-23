@@ -1,28 +1,38 @@
 package com.codecool.backend.modell.dish;
 
-import java.util.List;
+import jakarta.persistence.*;
 
+import java.util.List;
+import java.util.Set;
+
+@Entity
 public class Dish {
-    private int id;
+
+    @Id
+    @GeneratedValue
+    private long id;
+
     private String name;
     private String description;
     private String imageURL;
     private double price;
-    private Course course;
     private double averageRating;
     private double weight;
     private int stock;
-    private List<Allergen> allergens;
+    @ManyToMany
+    private Set<Allergen> allergens;
 
-    public Dish(int id, String name, String description, String imageURL, double price) {
-        this.id = id;
+    public Dish() {
+    }
+
+    public Dish(String name, String description, String imageURL, double price) {
         this.name = name;
         this.description = description;
         this.imageURL = imageURL;
         this.price = price;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

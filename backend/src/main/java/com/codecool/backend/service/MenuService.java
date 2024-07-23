@@ -10,37 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MenuService {
-    private MenuDAO menuDAO;
-    private MenuRowDAO menuRowDAO;
-    private DishDAO dishDAO;
-
-    public MenuService(MenuDAO menuDAO, MenuRowDAO menuRowDAO, DishDAO dishDAO) {
-        this.menuDAO = menuDAO;
-        this.menuRowDAO = menuRowDAO;
-        this.dishDAO = dishDAO;
-    }
 
     public WeeklyMenu getMenu() {
-        WeeklyMenu menu = menuDAO.getMenu();
-
-        MenuRow menuRow1 = menuRowDAO.getMenuRowByCode("S1");
-        MenuRow menuRow2 = menuRowDAO.getMenuRowByCode("M1");
-        MenuRow menuRow3 = menuRowDAO.getMenuRowByCode("D1");
-
-        Dish gulash = dishDAO.getDishById(1);
-        Dish wiener = dishDAO.getDishById(2);
-        Dish crepes = dishDAO.getDishById(3);
-
-        for (int i = 0; i < 5; i++) {
-            menuRow1.addDish(gulash);
-            menuRow2.addDish(wiener);
-            menuRow3.addDish(crepes);
-        }
-
-        menu.addMenuRow(menuRow1);
-        menu.addMenuRow(menuRow2);
-        menu.addMenuRow(menuRow3);
-
-        return menu;
     }
 }
