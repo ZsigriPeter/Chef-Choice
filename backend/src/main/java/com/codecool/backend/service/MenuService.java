@@ -1,16 +1,28 @@
 package com.codecool.backend.service;
 
-import com.codecool.backend.dao.DishDAO;
-import com.codecool.backend.dao.MenuDAO;
-import com.codecool.backend.dao.MenuRowDAO;
-import com.codecool.backend.modell.dish.Dish;
-import com.codecool.backend.modell.menu.MenuRow;
+import com.codecool.backend.controller.NoMenuForDateException;
 import com.codecool.backend.modell.menu.WeeklyMenu;
+import com.codecool.backend.repository.WeeklyMenuRepository;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.util.Optional;
 
 @Service
 public class MenuService {
 
-    public WeeklyMenu getMenu() {
+    private WeeklyMenuRepository weeklyMenuRepository;
+
+    public MenuService(WeeklyMenuRepository weeklyMenuRepository) {
+        this.weeklyMenuRepository = weeklyMenuRepository;
+    }
+
+    public WeeklyMenu getMenu(LocalDate startDate) {
+        Optional<WeeklyMenu> foundWeeklyMenu = weeklyMenuRepository.findByStartDate(startDate);
+        if (foundWeeklyMenu.isPresent()) {
+            return foundWeeklyMenu.get();
+        } else {
+            throw new NoMenuForDateException();
+        }
     }
 }

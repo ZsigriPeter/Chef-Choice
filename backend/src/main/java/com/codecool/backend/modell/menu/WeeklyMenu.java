@@ -15,13 +15,15 @@ public class WeeklyMenu {
     @Id
     @GeneratedValue
     private Long id;
+    private int year;
     private int weekNumber;
     private LocalDate startDate;
     private LocalDate endDate;
     @OneToMany
     private List<MenuRow> menuRows;
 
-    public WeeklyMenu(int weekNumber, LocalDate startDate, LocalDate endDate) {
+    public WeeklyMenu(int year, int weekNumber, LocalDate startDate, LocalDate endDate) {
+        this.year = year;
         this.weekNumber = weekNumber;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -29,6 +31,10 @@ public class WeeklyMenu {
     }
 
     public WeeklyMenu() {
+    }
+
+    public int getYear() {
+        return year;
     }
 
     public int getWeekNumber() {

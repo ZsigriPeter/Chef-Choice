@@ -6,7 +6,10 @@ import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
 
 @RestController
 public class MenuController {
@@ -18,8 +21,8 @@ public class MenuController {
     private MenuService menuService;
 
     @GetMapping("/weekly-menu")
-    public WeeklyMenu getMenu() {
-        return menuService.getMenu();
+    public WeeklyMenu getMenu(@RequestParam LocalDate date) {
+        return menuService.getMenu(date);
     }
 
     @GetMapping("/main-page")

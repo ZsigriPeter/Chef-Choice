@@ -15,7 +15,7 @@ public class MenuRow {
     private CourseType course;
     private String code;
     @OneToMany
-    private List<Dish> dishes;
+    private List<MenuItem> dishes;
 
     public MenuRow(CourseType course, String code) {
         this.course = course;
@@ -35,7 +35,7 @@ public class MenuRow {
         return code;
     }
 
-    public List<Dish> getDishes() {
+    public List<MenuItem> getDishes() {
         return dishes;
     }
 
