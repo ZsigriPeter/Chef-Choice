@@ -1,6 +1,7 @@
 package com.codecool.backend.service;
 
 import com.codecool.backend.controller.NoMenuForDateException;
+import com.codecool.backend.controller.dto.WeeklyMenuDTO;
 import com.codecool.backend.modell.menu.WeeklyMenu;
 import com.codecool.backend.repository.WeeklyMenuRepository;
 import org.springframework.stereotype.Service;
@@ -17,10 +18,11 @@ public class MenuService {
         this.weeklyMenuRepository = weeklyMenuRepository;
     }
 
-    public WeeklyMenu getMenu(LocalDate startDate) {
+    public WeeklyMenuDTO getMenu(LocalDate startDate) {
         Optional<WeeklyMenu> foundWeeklyMenu = weeklyMenuRepository.findByStartDate(startDate);
         if (foundWeeklyMenu.isPresent()) {
-            return foundWeeklyMenu.get();
+            WeeklyMenu foundMenu = foundWeeklyMenu.get();
+            return new WeeklyMenuDTO(foundMenu.getWeekNumber(), foundMenu.getStartDate(), foundMenu.getEndDate(), foundMenu.getMenuRows());
         } else {
             throw new NoMenuForDateException();
         }

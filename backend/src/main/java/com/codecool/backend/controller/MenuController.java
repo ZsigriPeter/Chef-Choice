@@ -1,6 +1,7 @@
 package com.codecool.backend.controller;
 
 import com.codecool.backend.controller.dto.MainPageDTO;
+import com.codecool.backend.controller.dto.WeeklyMenuDTO;
 import com.codecool.backend.modell.menu.WeeklyMenu;
 import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MenuService;
@@ -14,14 +15,18 @@ import java.time.LocalDate;
 @RestController
 public class MenuController {
 
-    @Autowired
     private DishService dishService;
-
-    @Autowired
     private MenuService menuService;
 
+    @Autowired
+    public MenuController(DishService dishService, MenuService menuService) {
+        this.dishService = dishService;
+        this.menuService = menuService;
+    }
+
+
     @GetMapping("/weekly-menu")
-    public WeeklyMenu getMenu(@RequestParam LocalDate date) {
+    public WeeklyMenuDTO getMenu(@RequestParam LocalDate date) {
         return menuService.getMenu(date);
     }
 
