@@ -1,46 +1,30 @@
 package com.codecool.backend.service;
 
-import com.codecool.backend.dao.DishDAO;
-import com.codecool.backend.dao.MenuDAO;
-import com.codecool.backend.dao.MenuRowDAO;
-import com.codecool.backend.modell.dish.Dish;
-import com.codecool.backend.modell.menu.MenuRow;
+import com.codecool.backend.controller.NoMenuForDateException;
+import com.codecool.backend.controller.dto.WeeklyMenuDTO;
 import com.codecool.backend.modell.menu.WeeklyMenu;
+import com.codecool.backend.repository.WeeklyMenuRepository;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.util.Optional;
 
 @Service
 public class MenuService {
-    private MenuDAO menuDAO;
-    private MenuRowDAO menuRowDAO;
-    private DishDAO dishDAO;
 
-    public MenuService(MenuDAO menuDAO, MenuRowDAO menuRowDAO, DishDAO dishDAO) {
-        this.menuDAO = menuDAO;
-        this.menuRowDAO = menuRowDAO;
-        this.dishDAO = dishDAO;
+    private WeeklyMenuRepository weeklyMenuRepository;
+
+    public MenuService(WeeklyMenuRepository weeklyMenuRepository) {
+        this.weeklyMenuRepository = weeklyMenuRepository;
     }
 
-    public WeeklyMenu getMenu() {
-        WeeklyMenu menu = menuDAO.getMenu();
-
-        MenuRow menuRow1 = menuRowDAO.getMenuRowByCode("S1");
-        MenuRow menuRow2 = menuRowDAO.getMenuRowByCode("M1");
-        MenuRow menuRow3 = menuRowDAO.getMenuRowByCode("D1");
-
-        Dish gulash = dishDAO.getDishById(1);
-        Dish wiener = dishDAO.getDishById(2);
-        Dish crepes = dishDAO.getDishById(3);
-
-        for (int i = 0; i < 5; i++) {
-            menuRow1.addDish(gulash);
-            menuRow2.addDish(wiener);
-            menuRow3.addDish(crepes);
+    public WeeklyMenuDTO getMenu(LocalDate startDate) {
+        Optional<WeeklyMenu> foundWeeklyMenu = weeklyMenuRepository.findByStartDate(startDate);
+        if (foundWeeklyMenu.isPresent()) {
+            WeeklyMenu foundMenu = foundWeeklyMenu.get();
+            return new WeeklyMenuDTO(foundMenu.getWeekNumber(), foundMenu.getStartDate(), foundMenu.getEndDate(), foundMenu.getMenuRows());
+        } else {
+            throw new NoMenuForDateException();
         }
-
-        menu.addMenuRow(menuRow1);
-        menu.addMenuRow(menuRow2);
-        menu.addMenuRow(menuRow3);
-
-        return menu;
     }
 }

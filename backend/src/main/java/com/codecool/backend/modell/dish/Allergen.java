@@ -1,31 +1,33 @@
 package com.codecool.backend.modell.dish;
 
-public enum Allergen {
-    A1(1, "Gluten"),
-    A2(2, "Crustaceans"),
-    A3(3, "Eggs"),
-    A4(4, "Fish");
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
-    public int id;
-    public String name;
+import java.util.List;
+import java.util.Set;
 
-    Allergen(int id, String name) {
-        this.id = id;
+@Entity
+public class Allergen {
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String name;
+
+
+    public Allergen(String name) {
         this.name = name;
     }
 
-/*    Gluten
-            Crustaceans
-    Eggs
-            Fish
-    Peanuts
-            Soybeans
-    Milk
-    Tree nuts
-    Celery
-            Mustard
-    Sesame seeds
-    Sulphur dioxide and sulphites
-    Lupin
-            Molluscs*/
+    public Allergen() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
