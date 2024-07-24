@@ -22,7 +22,7 @@ public class MenuService {
         Optional<WeeklyMenu> foundWeeklyMenu = weeklyMenuRepository.findByStartDate(startDate);
         if (foundWeeklyMenu.isPresent()) {
             WeeklyMenu foundMenu = foundWeeklyMenu.get();
-            return new WeeklyMenuDTO(foundMenu.getWeekNumber(), foundMenu.getStartDate(), foundMenu.getEndDate(), foundMenu.getMenuRows());
+            return new WeeklyMenuDTO(foundMenu.getWeekNumber(), foundMenu.getStartDate(), foundMenu.getEndDate(), foundMenu.getMenuItems());
         } else {
             throw new NoMenuForDateException();
         }

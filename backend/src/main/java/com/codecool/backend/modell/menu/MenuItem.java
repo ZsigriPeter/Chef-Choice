@@ -12,7 +12,12 @@ public class MenuItem {
     @GeneratedValue
     private Long id;
     @ManyToOne
+    private CourseType course;
+    private String code;
+    @ManyToOne
     private Dish dish;
     private int dayIndex;
+    @ManyToOne
+    private WeeklyMenu weeklyMenu;
 
 }

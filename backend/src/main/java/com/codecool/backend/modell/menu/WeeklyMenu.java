@@ -1,9 +1,6 @@
 package com.codecool.backend.modell.menu;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,15 +16,15 @@ public class WeeklyMenu {
     private int weekNumber;
     private LocalDate startDate;
     private LocalDate endDate;
-    @OneToMany
-    private List<MenuRow> menuRows;
+    @OneToMany(mappedBy = "weeklyMenu", cascade = CascadeType.ALL)
+    private List<MenuItem> menuItems;
 
     public WeeklyMenu(int year, int weekNumber, LocalDate startDate, LocalDate endDate) {
         this.year = year;
         this.weekNumber = weekNumber;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.menuRows = new ArrayList<>();
+        this.menuItems = new ArrayList<>();
     }
 
     public WeeklyMenu() {
@@ -49,8 +46,8 @@ public class WeeklyMenu {
         return endDate;
     }
 
-    public List<MenuRow> getMenuRows() {
-        return menuRows;
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
     }
 
     public Long getId() {
