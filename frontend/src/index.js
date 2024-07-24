@@ -7,6 +7,8 @@ import './index.css';
 import MainPage from './pages/MainPage';
 import reportWebVitals from './reportWebVitals';
 import WeeklyMenuPage from "./pages/WeeklyMenuPage";
+import AdminPage from "./pages/AdminPage";
+
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,16 @@ const router = createBrowserRouter([
             {
                 path: "/weekly-menu",
                 element: <WeeklyMenuPage/>,
+            },
+            {
+                path: "/admin",
+                element: <AdminPage/>,
+                children: [
+                    {
+                        path: "/admin/dish",
+                        element: <WeeklyMenuPage/>,
+                    },
+                ]
             },
         ],
     },

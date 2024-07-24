@@ -1,6 +1,7 @@
 import {Link, Outlet} from 'react-router-dom';
 import Footer from './Footer';
 import {hasPointerEvents} from "@testing-library/user-event/dist/utils";
+import AdminNavBar from "./admin/AdminNavBar";
 
 function NavBar() {
 
