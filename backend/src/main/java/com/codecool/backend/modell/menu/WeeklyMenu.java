@@ -1,5 +1,6 @@
 package com.codecool.backend.modell.menu;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -16,7 +17,7 @@ public class WeeklyMenu {
     private int weekNumber;
     private LocalDate startDate;
     private LocalDate endDate;
-    @OneToMany(mappedBy = "weeklyMenu", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "weeklyMenu", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<MenuItem> menuItems;
 
     public WeeklyMenu(int year, int weekNumber, LocalDate startDate, LocalDate endDate) {

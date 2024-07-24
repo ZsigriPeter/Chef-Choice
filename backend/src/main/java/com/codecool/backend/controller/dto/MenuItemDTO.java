@@ -8,9 +8,9 @@ import jakarta.persistence.ManyToOne;
 import java.time.LocalDate;
 
 public record MenuItemDTO(
-        CourseType course,
+        Long id,
+        CourseTypeDTO course,
         String code,
-        Dish dish,
-        int dayIndex,
-        LocalDate startDate) {
+        DishDTO dish,
+        int dayIndex) {
 }
