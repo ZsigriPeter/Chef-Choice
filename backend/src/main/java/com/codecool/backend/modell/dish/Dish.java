@@ -17,8 +17,6 @@ public class Dish {
     private String imageURL;
     private double price;
     private double averageRating;
-    private double weight;
-    private int stock;
     @ManyToMany
     private Set<Allergen> allergens;
 
