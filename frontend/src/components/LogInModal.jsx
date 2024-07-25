@@ -42,9 +42,9 @@ function LogInModal() {
 
     return (
         <div className="log-in-component">
-            <button className="page-button" onClick={handleShow}>
+            <a className="page-button" onClick={handleShow}>
                 Log In
-            </button>
+            </a>
 
             <Modal className="login-modal" show={show} onHide={handleClose}>
                 <Modal.Header closeButton={true}>
