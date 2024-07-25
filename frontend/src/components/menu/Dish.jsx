@@ -9,7 +9,6 @@ function Dish({dish}) {
             {/*<div>
                 <DishAllergenList allergenList={dish.allergens}/>
             </div>*/}
-            <input className={"amountInput"} type={"number"} min={0} max={100}/>
         </div>
     )
 }

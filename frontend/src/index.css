@@ -134,6 +134,7 @@ nav {
     min-width: 11em;
     max-width: 25em;
     padding: 1em;
+    margin: 0.2em;
 }
 
 .courseType {
@@ -200,6 +201,7 @@ text-align: center;
     margin: 0;
     height: 3em;
     max-width: 9em;
+    min-height: 6em;
 }
 .dishPrice{
     margin-bottom: 0;
