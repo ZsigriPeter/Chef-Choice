@@ -9,7 +9,7 @@ VALUES (1, 'Gluten'),
        (3, 'Eggs'),
        (4, 'Fish'),
        (5, 'Peanuts'),
-       (6, 'Soybeans'),
+       (6, 'Soy'),
        (7, 'Milk'),
        (8, 'Nuts'),
        (9, 'Celery'),
@@ -17,7 +17,13 @@ VALUES (1, 'Gluten'),
        (11, 'Sesame seeds'),
        (12, 'Sulphites'),
        (13, 'Lupin'),
-       (14, 'Molluscs');
+       (14, 'Molluscs'),
+       (15, 'Dairy'),
+       (16, 'Garlic'),
+       (17, 'Shellfish'),
+       (18, 'Coconut');
+
+
 
 INSERT INTO public.dish (id, name, description, price)
 VALUES (1, 'Bruschetta Pomodoro', 'Grilled bread topped with fresh tomatoes, basil, garlic, and olive oil.', 6.50),
@@ -49,19 +55,78 @@ VALUES (1, 'Bruschetta Pomodoro', 'Grilled bread topped with fresh tomatoes, bas
        (27, 'Chocolate Lava Cake', 'Warm chocolate cake with a gooey center, served with vanilla ice cream.', 7.00),
        (28, 'Cheesecake', 'Creamy cheesecake with a graham cracker crust.', 6.00),
        (29, 'Fruit Tart', 'Pastry crust filled with custard and topped with fresh fruits.', 5.50),
-       (30, 'Lemon Sorbet', 'Refreshing lemon sorbet.', 4.00);
+       (30, 'Lemon Sorbet', 'Refreshing lemon sorbet.', 4.00),
+       (31, 'Garlic Parmesan Wings', 'Crispy chicken wings tossed in garlic and Parmesan sauce.', 8.50),
+       (32, 'Crispy Calamari', 'Lightly breaded calamari rings served with marinara sauce.', 9.50),
+       (33, 'Spinach Artichoke Dip', 'Creamy dip made with spinach, artichokes, and cheese, served with pita bread.',
+        7.50),
+       (34, 'Stuffed Bell Peppers', 'Bell peppers stuffed with rice, beef, and herbs, topped with marinara sauce.',
+        8.00),
+       (35, 'Hummus Plate', 'Traditional hummus served with pita bread and vegetable sticks.', 6.50),
+       (36, 'Butternut Squash Soup', 'Velvety butternut squash soup with a hint of nutmeg.', 5.50),
+       (37, 'Lentil Soup', 'Hearty lentil soup with vegetables and spices.', 5.00),
+       (38, 'Gazpacho', 'Cold Spanish tomato-based soup with cucumber and peppers.', 4.50),
+       (39, 'Chicken Noodle Soup', 'Classic soup with chicken, noodles, and vegetables.', 6.00),
+       (40, 'Potato Leek Soup', 'Creamy soup made with potatoes and leeks.', 5.50),
+       (41, 'Waldorf Salad', 'Apples, walnuts, celery, and grapes in a creamy dressing.', 8.00),
+       (42, 'Panzanella Salad', 'Tuscan salad with tomatoes, bread, cucumbers, and red onions.', 7.50),
+       (43, 'Beet Salad', 'Roasted beets with goat cheese, arugula, and balsamic vinaigrette.', 8.50),
+       (44, 'Niçoise Salad', 'Mixed greens with tuna, green beans, potatoes, and olives.', 9.00),
+       (45, 'Southwest Chicken Salad', 'Mixed greens with grilled chicken, corn, black beans, and avocado.', 8.50),
+       (46, 'Beef Tacos', 'Soft tortillas filled with seasoned beef, lettuce, cheese, and salsa.', 10.00),
+       (47, 'Vegetable Lasagna', 'Layers of pasta, vegetables, ricotta, and marinara sauce.', 12.00),
+       (48, 'Chicken Parmesan', 'Breaded chicken breast topped with marinara sauce and mozzarella.', 13.50),
+       (49, 'Pad Thai', 'Rice noodles stir-fried with shrimp, tofu, peanuts, and a tangy sauce.', 12.50),
+       (50, 'Bangers and Mash', 'Traditional British dish with sausages, mashed potatoes, and gravy.', 11.50),
+       (51, 'Stuffed Cabbage Rolls', 'Cabbage leaves stuffed with rice and meat, cooked in tomato sauce.', 11.00),
+       (52, 'Prawn Risotto', 'Creamy risotto with prawns and a hint of saffron.', 14.50),
+       (53, 'Eggplant Moussaka', 'Layers of eggplant, minced meat, and béchamel sauce.', 13.00),
+       (54, 'Fish and Chips', 'Beer-battered fish fillet with fries and tartar sauce.', 12.50),
+       (55, 'Ratatouille', 'Traditional French vegetable stew.', 10.00),
+       (56, 'Apple Pie', 'Classic apple pie with a flaky crust.', 5.00),
+       (57, 'Panna Cotta', 'Creamy Italian dessert served with a berry coulis.', 6.00),
+       (58, 'Carrot Cake', 'Moist carrot cake with cream cheese frosting.', 5.50),
+       (59, 'Mango Sticky Rice', 'Sweet mango served with coconut sticky rice.', 6.50),
+       (60, 'Churros', 'Fried dough pastry sprinkled with cinnamon sugar, served with chocolate sauce.', 5.00);
+
 
 INSERT INTO public.weekly_menu (id, start_date, end_date, week_number, year)
-VALUES (1, '2024-07-22', '2024-07-26', 30, 2024),
-       (2, '2024-07-29', '2024-08-02', 30, 2024),
-       (3, '2024-08-05', '2024-08-09', 30, 2024);
+VALUES (1, '2024 - 07 - 22 ', '2024-07-26', 30, 2024),
+       (2, '2024-07-29', '2024-08-02', 31, 2024),
+       (3, '2024-08-05', '2024-08-09', 32, 2024);
 
 INSERT INTO public.menu_item (id, code, day_index, course_id, dish_id, weekly_menu_id)
 VALUES (100, 'S1', 0, 1, 10, 1),
-(101, 'S1', 1, 1, 6, 1),
-(102, 'S1', 2, 1, 7, 1),
-(103, 'S1', 3, 1, 8, 1),
-(104, 'S1', 4, 1, 9, 1);
+       (101, 'S1', 1, 1, 6, 1),
+       (102, 'S1', 2, 1, 7, 1),
+       (103, 'S1', 3, 1, 8, 1),
+       (104, 'S1', 4, 1, 9, 1),
+       (105, 'S2', 0, 1, 36, 1),
+       (106, 'S2', 1, 1, 37, 1),
+       (107, 'S2', 2, 1, 38, 1),
+       (108, 'S2', 3, 1, 39, 1),
+       (109, 'S2', 4, 1, 40, 1),
+       (110, 'M1', 0, 2, 16, 1),
+       (111, 'M1', 1, 2, 17, 1),
+       (112, 'M1', 2, 2, 18, 1),
+       (113, 'M1', 3, 2, 19, 1),
+       (114, 'M1', 4, 2, 20, 1),
+       (115, 'M2', 0, 2, 46, 1),
+       (116, 'M2', 1, 2, 47, 1),
+       (117, 'M2', 2, 2, 48, 1),
+       (118, 'M2', 3, 2, 49, 1),
+       (119, 'M2', 4, 2, 50, 1),
+       (120, 'D1', 0, 3, 26, 1),
+       (121, 'D1', 1, 3, 27, 1),
+       (122, 'D1', 2, 3, 28, 1),
+       (123, 'D1', 3, 3, 29, 1),
+       (124, 'D1', 4, 3, 30, 1),
+       (125, 'D2', 0, 3, 56, 1),
+       (126, 'D2', 1, 3, 57, 1),
+       (127, 'D2', 2, 3, 58, 1),
+       (128, 'D2', 3, 3, 59, 1),
+       (129, 'D2', 4, 3, 60, 1)
+       ;
 
 INSERT INTO public.address (id, zip, country, settlement, street_and_house_number)
 VALUES

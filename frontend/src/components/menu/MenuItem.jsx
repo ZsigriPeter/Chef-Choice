@@ -1,13 +1,17 @@
-
-
-function MenuItem({menuItem}){
-    return(
-        <div>
-            <h4>{menuItem.dish.name}</h4>
-            <h4>{menuItem.dish.description}</h4>
-            <h4>{menuItem.dish.price}</h4>
-            <h4>{menuItem.dish.allergens}</h4>
+function MenuItem({menuItem}) {
+    return (
+        <div className={"menuItemDiv"}>
+            <h4 className={"menuItemDishName"}>{menuItem.dish.name}</h4>
+            <p className={"menuItemDescription"}> {menuItem.dish.description}</p>
+            <h4 className={"menuItemPrice"}>{menuItem.dish.price} €</h4>
+            <div className={"menuItemAllergens"}>
+                {menuItem.dish.allergens && menuItem.dish.allergens.map(allergen =>
+                    <p className={"menuItemAllergen"}>{allergen}</p>)
+                }
+            </div>
+            <input className={"amountInput"} type={"number"} min={0} max={100}/>
         </div>
     )
 }
+
 export default MenuItem
