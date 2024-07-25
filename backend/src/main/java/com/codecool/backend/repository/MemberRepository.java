@@ -1,4 +1,4 @@
-package com.codecool.backend.repositrory;
+package com.codecool.backend.repository;
 
 import com.codecool.backend.modell.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;

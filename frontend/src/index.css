@@ -214,3 +214,39 @@ text-align: center;
 .sign-up {
     color: white;
 }
+
+.login-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 20em;
+    padding: 1.3rem;
+    min-height: 10em;
+    position: absolute;
+    top: 20%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-left: calc(50% - 10em);
+}
+
+.log-in-component {
+    text-decoration-color: red;
+}
+.page-button {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 1.15em;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    transition: all 0.3s ease;
+    background: #242526;
+    border: none;
+    margin-top: 0;
+}
+
+.page-button:hover {
+    background: #3A3B3C;
+}
