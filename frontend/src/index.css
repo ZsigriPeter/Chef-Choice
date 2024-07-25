@@ -83,6 +83,31 @@ nav {
     padding-left: 1em;
 }
 
+.mainPageMessage {
+    color: white;
+    text-shadow: black 0.5rem 0.5rem 1rem;
+    font-size: 2.5em;
+    margin: auto;
+    max-width: fit-content;
+    padding: 0.3em;
+    background-color: rgb(1, 1, 1, 0.6);
+    border-radius: 0.4em;
+}
+
+.sign-up {
+    color: white;
+}
+
+.mainPage {
+    background-image: url('./imgs/background.png');
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
 .sideMenuBar {
     padding: 1em;
     width: 14vw;
@@ -130,7 +155,8 @@ nav {
 }
 
 .dishDiv {
-    background: white; opacity: 0.9;
+    background: white;
+    opacity: 0.9;
     min-width: 11em;
     max-width: 25em;
     padding: 1em;
@@ -143,7 +169,7 @@ nav {
     padding: 0.5em;
     color: white;
     margin: 0;
-text-align: center;
+    text-align: center;
 }
 
 .rowCode {
@@ -166,51 +192,91 @@ text-align: center;
     background-color: #d29500;
 }
 
-.mainPageMessage {
-    color: white;
-    text-shadow: black 0.5rem 0.5rem 1rem;
-    font-size: 2.5em;
-    margin: auto;
-    max-width: fit-content;
-    padding: 0.3em;
-    background-color: rgb(1, 1, 1, 0.6);
-    border-radius: 0.4em;
-}
-
-.mainPage {
-    background-image: url('./imgs/background.png');
-    height: 80vh;
-    /*height: 80vh;*/
-    background-repeat: no-repeat;
-    background-position: center top;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-
-}
-
-.amountInput{
+.amountInput {
     max-width: 4em;
     margin: 0;
 }
-.dishName{
+
+.dishName {
     margin: 0;
 }
-.dishDescription{
+
+.dishDescription {
     margin: 0;
     height: 3em;
     max-width: 9em;
 }
-.dishPrice{
+
+.dishPrice {
     margin-bottom: 0;
 }
 
-.weekTab{
+.weekTab {
     min-width: 10em;
     margin-right: 0.5em;
     background-color: darkslategray;
     color: white;
 }
-.sign-up {
+
+
+.menuItems {
+    display: flex;
+}
+
+.course-header {
+    margin-left: 2.5em;
+    padding: 0.5em;
     color: white;
+    margin-bottom: 0;
+}
+
+.code {
+    color: white;
+    min-width: 2.7em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+[data-code="S1"] {
+    background-color: #0005a8;
+}
+
+[data-code="S2"] {
+    background-color: #00036f;
+}
+
+[data-course="Soup"] {
+    background-color: #0005a8;
+}
+
+[data-code="M1"] {
+    background-color: #0ca802;
+}
+
+[data-code="M2"] {
+    background-color: #087f00;
+}
+
+[data-course="Main"] {
+    background-color: #0ca802;
+}
+
+[data-code="D1"] {
+    background-color: #d29500;
+}
+
+[data-code="D2"] {
+    background-color: #9b6e01;
+}
+
+[data-course="Dessert"] {
+    background-color: #d29500;
+}
+
+.menuItemDiv {
+    background-color: white;
+    opacity: 0.9;
+    padding: 1em;
+    border: 0.02em solid #282c34;
+    width: 13em;
 }

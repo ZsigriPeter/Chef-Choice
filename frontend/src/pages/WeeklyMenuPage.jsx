@@ -11,29 +11,29 @@ const fetchMenuOfTheWeek = (startDate) => {
 function getStartDateOfCurrentWeek() {
     const currentDate = new Date(Date.now());
     const currentDayIndex = currentDate.getUTCDay();
-    let actualDate = currentDate;
-    let date = ""
-    if (currentDayIndex > 0 && currentDayIndex < 6) {
-        actualDate = new Date(currentDate.setDate(currentDate.getDate() - (currentDayIndex - 1)));
-        date = `${actualDate.getUTCFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${actualDate.getUTCDate()}`
-    }
-    return date;
+    return new Date(currentDate.setDate(currentDate.getDate() - (currentDayIndex - 1)));
+}
+
+function getStartDateStringOfWeek(actualDate) {
+    return `${actualDate.getUTCFullYear()}-${(actualDate.getMonth() + 1).toString().padStart(2, '0')}-${actualDate.getUTCDate()}`
+
 }
 
 function WeeklyMenuPage() {
     const [menu, setMenu] = useState(null);
+    const [currentWeekStartDate, setCurrentWeekStartDate] = useState(getStartDateStringOfWeek(getStartDateOfCurrentWeek()));
     const [searchParams,] = useSearchParams();
 
     useEffect(() => {
-        let date = getStartDateOfCurrentWeek();
         const startDate = searchParams.get('date')
 
         if (startDate) {
-            date = startDate;
+            setCurrentWeekStartDate(startDate)
         }
-        fetchMenuOfTheWeek(date).then((menu) => {
+        fetchMenuOfTheWeek(currentWeekStartDate).then((menu) => {
             setMenu(menu)
         });
+
     }, []);
 
 
