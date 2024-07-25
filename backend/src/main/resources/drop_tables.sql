@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS public.address CASCADE;
-DROP TABLE IF EXISTS public.address CASCADE;
 DROP TABLE IF EXISTS public.allergen CASCADE;
 DROP TABLE IF EXISTS public.course_type CASCADE;
 DROP TABLE IF EXISTS public.dish CASCADE;

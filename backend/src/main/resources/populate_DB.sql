@@ -91,7 +91,7 @@ VALUES (1, 'Bruschetta Pomodoro', 'Grilled bread topped with fresh tomatoes, bas
 
 
 INSERT INTO public.weekly_menu (id, start_date, end_date, week_number, year)
-VALUES (1, '2024 - 07 - 22 ', '2024-07-26', 30, 2024),
+VALUES (1, '2024-07-22', '2024-07-26', 30, 2024),
        (2, '2024-07-29', '2024-08-02', 31, 2024),
        (3, '2024-08-05', '2024-08-09', 32, 2024);
 
