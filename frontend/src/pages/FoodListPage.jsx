@@ -9,8 +9,7 @@ function FoodListPage() {
     const [foodList, setFoodList] = useState([]);
 
     useEffect(()=> {
-        console.log("FoodList page useEffect")
-        fetchFoodList().then(foodList => setFoodList(foodList)) //TODO sort
+        fetchFoodList().then(foodList => setFoodList(foodList.sort((a, b)=> a.name < b.name ? -1 : 1))) //TODO sort
     },[])
 
     return (
