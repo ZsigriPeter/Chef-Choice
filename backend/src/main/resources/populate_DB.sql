@@ -62,3 +62,20 @@ VALUES (100, 'S1', 0, 1, 10, 1),
 (102, 'S1', 2, 1, 7, 1),
 (103, 'S1', 3, 1, 8, 1),
 (104, 'S1', 4, 1, 9, 1);
+
+INSERT INTO public.address (id, zip, country, settlement, street_and_house_number)
+VALUES
+    (1, '10001', 'USA', 'New York', '123 Main St Apt 4B'),
+    (2, '90001', 'USA', 'Los Angeles', '456 Elm St Unit 5C'),
+    (3, '94105', 'USA', 'San Francisco', '789 Pine St Suite 6D'),
+    (4, '60601', 'USA', 'Chicago', '101 Maple St Apt 7E'),
+    (5, '75201', 'USA', 'Dallas', '202 Oak St Unit 8F');
+
+INSERT INTO public.member (id, email, first_name, last_name, phone, address_id)
+VALUES
+    (1, 'john.doe@example.com', 'John', 'Doe', '555-1234', 1),
+    (2, 'jane.smith@example.com', 'Jane', 'Smith', '555-5678', 2),
+    (3, 'michael.johnson@example.com', 'Michael', 'Johnson', '555-8765', 3),
+    (4, 'emily.davis@example.com', 'Emily', 'Davis', '555-4321', 4),
+    (5, 'william.brown@example.com', 'William', 'Brown', '555-9876', 5);
+
