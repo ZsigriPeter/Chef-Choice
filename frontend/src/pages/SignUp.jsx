@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 async function postNewUser(userData) {
     console.log(userData)
@@ -12,6 +13,8 @@ async function postNewUser(userData) {
 
 
 function SignUp() {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
@@ -34,7 +37,9 @@ function SignUp() {
             country,
             ZIP
         }
-        postNewUser(userData);
+        postNewUser(userData).then(
+            navigate('/')
+        );
     };
 
     return (

@@ -222,14 +222,14 @@ text-align: center;
     flex-direction: column;
     justify-content: center;
     gap: 0.4rem;
-    width: 20em;
+    width: 20rem;
     padding: 1.3rem;
     min-height: 10em;
     position: absolute;
     top: 20%;
     background-color: white;
-    border: 1px solid black;
-    border-radius: 15px;
+    border: 0.1rem solid black;
+    border-radius: 2rem;
     margin-left: calc(50% - 10em);
 }
 
