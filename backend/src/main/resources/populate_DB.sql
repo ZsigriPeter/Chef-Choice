@@ -56,11 +56,6 @@ VALUES (1, '2024-07-22', '2024-07-26', 30, 2024),
        (2, '2024-07-29', '2024-08-02', 30, 2024),
        (3, '2024-08-05', '2024-08-09', 30, 2024);
 
-
-
-INSERT INTO public.weekly_menu (id, end_date, start_date, week_number, year)
-VALUES (1, '2024-07-26', '2024-07-22', 30, 2024);
-
 INSERT INTO public.menu_item (id, code, day_index, course_id, dish_id, weekly_menu_id)
 VALUES (100, 'S1', 0, 1, 10, 1),
 (101, 'S1', 1, 1, 6, 1),
