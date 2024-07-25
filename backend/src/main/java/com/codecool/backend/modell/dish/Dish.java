@@ -14,22 +14,22 @@ public class Dish {
 
     private String name;
     private String description;
-    private String imageURL;
     private double price;
-    private double averageRating;
-    private double weight;
-    private int stock;
+
     @ManyToMany
     private Set<Allergen> allergens;
 
     public Dish() {
     }
 
-    public Dish(String name, String description, String imageURL, double price) {
+    public Dish(String name, String description, double price) {
         this.name = name;
         this.description = description;
-        this.imageURL = imageURL;
         this.price = price;
+    }
+
+    public Set<Allergen> getAllergens() {
+        return allergens;
     }
 
     public long getId() {
@@ -44,9 +44,6 @@ public class Dish {
         return description;
     }
 
-    public String getImageURL() {
-        return imageURL;
-    }
 
     public double getPrice() {
         return price;

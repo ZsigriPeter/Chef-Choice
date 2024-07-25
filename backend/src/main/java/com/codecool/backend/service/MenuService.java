@@ -1,6 +1,7 @@
 package com.codecool.backend.service;
 
 import com.codecool.backend.controller.NoMenuForDateException;
+import com.codecool.backend.controller.dto.DTOMapper;
 import com.codecool.backend.controller.dto.WeeklyMenuDTO;
 import com.codecool.backend.modell.menu.WeeklyMenu;
 import com.codecool.backend.repository.WeeklyMenuRepository;
@@ -22,7 +23,7 @@ public class MenuService {
         Optional<WeeklyMenu> foundWeeklyMenu = weeklyMenuRepository.findByStartDate(startDate);
         if (foundWeeklyMenu.isPresent()) {
             WeeklyMenu foundMenu = foundWeeklyMenu.get();
-            return new WeeklyMenuDTO(foundMenu.getWeekNumber(), foundMenu.getStartDate(), foundMenu.getEndDate(), foundMenu.getMenuRows());
+            return DTOMapper.toWeeklyMenuDTO(foundMenu);
         } else {
             throw new NoMenuForDateException();
         }
