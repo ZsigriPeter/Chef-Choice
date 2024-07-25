@@ -1,5 +1,6 @@
 package com.codecool.backend.modell.member;
 
+import com.codecool.backend.controller.dto.NewMemberDTO;
 import jakarta.persistence.*;
 
 @Entity
@@ -31,6 +32,23 @@ public class Member {
 
     public Address getAddress() {
         return address;
+    }
+
+    public String getFirstName() {return firstName;}
+    public String getLastName() {return lastName;}
+    public String getPhone() {return phone;}
+
+    public NewMemberDTO toDTO() {
+        return new NewMemberDTO(
+                email,
+                firstName,
+                lastName,
+                phone,
+                address.getStreetAndHouseNumber(),
+                address.getSettlement(),
+                address.getCountry(),
+                address.getZIP()
+        );
     }
 
     @Override

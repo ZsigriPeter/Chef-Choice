@@ -1,5 +1,6 @@
 import {Link, Outlet} from 'react-router-dom';
 import Footer from './Footer';
+import LogInModal from "./LogInModal";
 import {hasPointerEvents} from "@testing-library/user-event/dist/utils";
 
 function NavBar() {
@@ -17,7 +18,7 @@ function NavBar() {
                         <li><a href="/">Orders</a></li>
                         <li><a href="/">Favorites</a></li>
                         <li><a href="/">User profile</a></li>
-                        <li><a href="/">Log In</a></li>
+                        <li><LogInModal/></li>
                     </ul>
                 </nav>
             </div>
