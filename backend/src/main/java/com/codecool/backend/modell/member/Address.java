@@ -23,4 +23,9 @@ public class Address {
     }
 
     public Address() {}
+
+    public String getStreetAndHouseNumber() {return streetAndHouseNumber;}
+    public String getSettlement() {return settlement;}
+    public String getCountry() {return country;}
+    public int getZIP() {return ZIP;}
 }
