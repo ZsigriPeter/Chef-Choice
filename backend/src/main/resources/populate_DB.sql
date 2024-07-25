@@ -96,7 +96,7 @@ VALUES (1, '2024 - 07 - 22 ', '2024-07-26', 30, 2024),
        (3, '2024-08-05', '2024-08-09', 32, 2024);
 
 INSERT INTO public.menu_item (id, code, day_index, course_id, dish_id, weekly_menu_id)
-VALUES /*(100, 'S1', 0, 1, 10, 1),
+VALUES (100, 'S1', 0, 1, 10, 1),
        (101, 'S1', 1, 1, 6, 1),
        (102, 'S1', 2, 1, 7, 1),
        (103, 'S1', 3, 1, 8, 1),
@@ -105,7 +105,7 @@ VALUES /*(100, 'S1', 0, 1, 10, 1),
        (106, 'S2', 1, 1, 37, 1),
        (107, 'S2', 2, 1, 38, 1),
        (108, 'S2', 3, 1, 39, 1),
-       (109, 'S2', 4, 1, 40, 1),*/
+       (109, 'S2', 4, 1, 40, 1),
        (110, 'M1', 0, 2, 16, 1),
        (111, 'M1', 1, 2, 17, 1),
        (112, 'M1', 2, 2, 18, 1),
@@ -127,3 +127,20 @@ VALUES /*(100, 'S1', 0, 1, 10, 1),
        (128, 'D2', 3, 3, 59, 1),
        (129, 'D2', 4, 3, 60, 1)
        ;
+
+INSERT INTO public.address (id, zip, country, settlement, street_and_house_number)
+VALUES
+    (1, '10001', 'USA', 'New York', '123 Main St Apt 4B'),
+    (2, '90001', 'USA', 'Los Angeles', '456 Elm St Unit 5C'),
+    (3, '94105', 'USA', 'San Francisco', '789 Pine St Suite 6D'),
+    (4, '60601', 'USA', 'Chicago', '101 Maple St Apt 7E'),
+    (5, '75201', 'USA', 'Dallas', '202 Oak St Unit 8F');
+
+INSERT INTO public.member (id, email, first_name, last_name, phone, address_id)
+VALUES
+    (1, 'john.doe@example.com', 'John', 'Doe', '555-1234', 1),
+    (2, 'jane.smith@example.com', 'Jane', 'Smith', '555-5678', 2),
+    (3, 'michael.johnson@example.com', 'Michael', 'Johnson', '555-8765', 3),
+    (4, 'emily.davis@example.com', 'Emily', 'Davis', '555-4321', 4),
+    (5, 'william.brown@example.com', 'William', 'Brown', '555-9876', 5);
+

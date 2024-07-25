@@ -65,7 +65,7 @@ function LogInModal() {
                         {
                             memberData ? (
                                 <p >
-                                    Greetings {memberData.email}
+                                    Greetings {memberData.firstName} {memberData.lastName}
                                 </p>
                             ) : (
                                 <p>
