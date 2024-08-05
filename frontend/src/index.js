@@ -8,6 +8,8 @@ import MainPage from './pages/MainPage';
 import reportWebVitals from './reportWebVitals';
 import WeeklyMenuPage from "./pages/WeeklyMenuPage";
 import AdminPage from "./pages/AdminPage";
+import FoodListPage from "./pages/FoodListPage";
+import SignUp from "./pages/SignUp";
 
 
 const router = createBrowserRouter([
@@ -28,14 +30,16 @@ const router = createBrowserRouter([
                 element: <WeeklyMenuPage/>,
             },
             {
+                path: "/food-list",
+                element: <FoodListPage/>,
+            },
+            {
+                path: "/sign-up",
+                element: <SignUp/>,
+            },
+            {
                 path: "/admin",
                 element: <AdminPage/>,
-                children: [
-                    {
-                        path: "/admin/dish",
-                        element: <WeeklyMenuPage/>,
-                    },
-                ]
             },
         ],
     },
