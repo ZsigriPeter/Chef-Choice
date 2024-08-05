@@ -20,6 +20,9 @@ function NavBar() {
                         <li><a href="/">Orders</a></li>
                         <li><a href="/">Favorites</a></li>
                         <li><a href="/">User profile</a></li>
+                        <li>
+                            <Link to={"/admin"}>Admin</Link>
+                        </li>
                         <li><LogInModal/></li>
                     </ul>
                 </nav>
