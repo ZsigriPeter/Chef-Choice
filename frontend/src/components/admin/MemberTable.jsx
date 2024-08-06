@@ -7,10 +7,11 @@ const MemberTable = ({members, onDelete, onAddAdmin, onRemoveAdmin}) => {
         <table>
             <thead>
             <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Toggle set admin role</th>
-                <th>Delete member</th>
+                <th>ID |</th>
+                <th>Username |</th>
+                <th>Toggle admin role |</th>
+                <th>Update |</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -29,6 +30,9 @@ const MemberTable = ({members, onDelete, onAddAdmin, onRemoveAdmin}) => {
                                         onClick={() => onAddAdmin(member.id)}>Add ADMIN role
                                 </button>
                             }
+                        </td>
+                        <td>
+                            <button type="button">Update...</button>
                         </td>
                         <td>{idToDelete === member.id ?
                             <>
