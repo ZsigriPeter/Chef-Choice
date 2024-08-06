@@ -1,10 +1,10 @@
-package com.codecool.backend.controller.dto;
+package com.codecool.backend.modell.dto;
 
-import com.codecool.backend.modell.dish.Allergen;
-import com.codecool.backend.modell.dish.Dish;
-import com.codecool.backend.modell.menu.CourseType;
-import com.codecool.backend.modell.menu.MenuItem;
-import com.codecool.backend.modell.menu.WeeklyMenu;
+import com.codecool.backend.modell.entity.dish.Allergen;
+import com.codecool.backend.modell.entity.dish.Dish;
+import com.codecool.backend.modell.entity.menu.CourseType;
+import com.codecool.backend.modell.entity.menu.MenuItem;
+import com.codecool.backend.modell.entity.menu.WeeklyMenu;
 
 import java.util.List;
 import java.util.Set;

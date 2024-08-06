@@ -1,6 +1,6 @@
 package com.codecool.backend.repository;
 
-import com.codecool.backend.modell.member.Address;
+import com.codecool.backend.modell.entity.member.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
