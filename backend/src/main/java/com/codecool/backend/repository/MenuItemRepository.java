@@ -1,6 +1,6 @@
 package com.codecool.backend.repository;
 
-import com.codecool.backend.modell.menu.MenuItem;
+import com.codecool.backend.modell.entity.menu.MenuItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package com.codecool.backend.controller;
 
-import com.codecool.backend.controller.dto.MemberAdminDTO;
+import com.codecool.backend.modell.dto.member.MemberAdminDTO;
 import com.codecool.backend.modell.member.Member;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

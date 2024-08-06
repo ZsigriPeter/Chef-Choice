@@ -1,12 +1,8 @@
-package com.codecool.backend.modell.dish;
+package com.codecool.backend.modell.entity.dish;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-
-import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Allergen {

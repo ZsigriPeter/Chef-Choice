@@ -1,8 +1,7 @@
-package com.codecool.backend.modell.dish;
+package com.codecool.backend.modell.entity.dish;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Set;
 
 @Entity

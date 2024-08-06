@@ -1,6 +1,4 @@
-package com.codecool.backend.controller.dto;
-
-import com.codecool.backend.modell.menu.MenuItem;
+package com.codecool.backend.modell.dto.food;
 
 import java.time.LocalDate;
 import java.util.List;

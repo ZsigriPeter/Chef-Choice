@@ -1,9 +1,9 @@
 package com.codecool.backend.service;
 
-import com.codecool.backend.controller.dto.MemberLoginDTO;
+import com.codecool.backend.modell.dto.member.MemberLoginDTO;
 import com.codecool.backend.repository.AddressRepository;
 import com.codecool.backend.repository.MemberRepository;
-import com.codecool.backend.modell.member.Member;
+import com.codecool.backend.modell.entity.member.Member;
 import org.springframework.stereotype.Service;
 
 @Service

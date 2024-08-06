@@ -136,11 +136,19 @@ VALUES
     (4, '60601', 'USA', 'Chicago', '101 Maple St Apt 7E'),
     (5, '75201', 'USA', 'Dallas', '202 Oak St Unit 8F');
 
-INSERT INTO public.member (id, email, first_name, last_name, phone, address_id)
+INSERT INTO public.member (id, username, password, email, first_name, last_name, phone, address_id)
 VALUES
-    (1, 'john.doe@example.com', 'John', 'Doe', '555-1234', 1),
-    (2, 'jane.smith@example.com', 'Jane', 'Smith', '555-5678', 2),
-    (3, 'michael.johnson@example.com', 'Michael', 'Johnson', '555-8765', 3),
-    (4, 'emily.davis@example.com', 'Emily', 'Davis', '555-4321', 4),
-    (5, 'william.brown@example.com', 'William', 'Brown', '555-9876', 5);
+    (1, 'john.doe','123','john.doe@example.com', 'John', 'Doe', '555-1234', 1),
+    (2, 'jane.smith','123','jane.smith@example.com', 'Jane', 'Smith', '555-5678', 2),
+    (3, 'john.doe','123','michael.johnson@example.com', 'Michael', 'Johnson', '555-8765', 3),
+    (4, 'michael.johnson','123','emily.davis@example.com', 'Emily', 'Davis', '555-4321', 4),
+    (5, 'william.brown','123','william.brown@example.com', 'William', 'Brown', '555-9876', 5);
+
+INSERT INTO public.member_role (id, role)
+VALUES
+    (1, 'ROLE_USER'),
+    (2, 'ROLE_ADMIN');
+
+
+
 

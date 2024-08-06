@@ -1,4 +1,4 @@
-package com.codecool.backend.controller.dto;
+package com.codecool.backend.modell.dto.food;
 
 public record AllergenDTO(Long id, String name) {
 }

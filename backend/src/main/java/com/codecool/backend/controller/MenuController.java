@@ -1,8 +1,7 @@
 package com.codecool.backend.controller;
 
-import com.codecool.backend.controller.dto.MainPageDTO;
-import com.codecool.backend.controller.dto.WeeklyMenuDTO;
-import com.codecool.backend.modell.menu.WeeklyMenu;
+import com.codecool.backend.modell.dto.MainPageDTO;
+import com.codecool.backend.modell.dto.food.WeeklyMenuDTO;
 import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +24,12 @@ public class MenuController {
     }
 
 
-    @GetMapping("/weekly-menu")
+    @GetMapping("/api/public/weekly-menu")
     public WeeklyMenuDTO getMenu(@RequestParam LocalDate date) {
         return menuService.getMenu(date);
     }
 
-    @GetMapping("/main-page")
+    @GetMapping("/api/public/main-page")
     public MainPageDTO getMainPageContent() {
         return new MainPageDTO("Welcome to Chef Choice", "picture URL");
     }

@@ -1,6 +1,5 @@
-package com.codecool.backend.modell.menu;
+package com.codecool.backend.modell.entity.menu;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
