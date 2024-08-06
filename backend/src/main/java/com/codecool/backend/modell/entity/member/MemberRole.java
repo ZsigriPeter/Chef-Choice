@@ -1,9 +1,6 @@
 package com.codecool.backend.modell.entity.member;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.HashSet;
@@ -14,6 +11,8 @@ import java.util.Set;
 public class MemberRole {
     @Id
     private Long id;
+    @Enumerated(EnumType.STRING)
+    @Column(unique = true)
     private Role role;
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
     private Set<Member> members;

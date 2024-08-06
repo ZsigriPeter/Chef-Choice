@@ -1,7 +1,7 @@
 package com.codecool.backend.controller;
 
 import com.codecool.backend.modell.dto.MainPageDTO;
-import com.codecool.backend.modell.dto.WeeklyMenuDTO;
+import com.codecool.backend.modell.dto.food.WeeklyMenuDTO;
 import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
