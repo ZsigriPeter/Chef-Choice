@@ -1,4 +1,4 @@
-package com.codecool.backend.modell.menu;
+package com.codecool.backend.modell.entity.menu;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

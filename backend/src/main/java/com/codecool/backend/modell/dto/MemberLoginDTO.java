@@ -1,4 +1,4 @@
-package com.codecool.backend.controller.dto;
+package com.codecool.backend.modell.dto;
 
 public record MemberLoginDTO(String email) {
 }

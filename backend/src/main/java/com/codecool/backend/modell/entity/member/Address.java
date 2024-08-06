@@ -1,10 +1,12 @@
-package com.codecool.backend.modell.member;
+package com.codecool.backend.modell.entity.member;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class Address {
 
     @Id
@@ -24,8 +26,4 @@ public class Address {
 
     public Address() {}
 
-    public String getStreetAndHouseNumber() {return streetAndHouseNumber;}
-    public String getSettlement() {return settlement;}
-    public String getCountry() {return country;}
-    public int getZIP() {return ZIP;}
 }

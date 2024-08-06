@@ -1,7 +1,4 @@
-package com.codecool.backend.controller.dto;
-
-import com.codecool.backend.modell.dish.Allergen;
-import jakarta.persistence.ManyToMany;
+package com.codecool.backend.modell.dto;
 
 import java.util.Set;
 

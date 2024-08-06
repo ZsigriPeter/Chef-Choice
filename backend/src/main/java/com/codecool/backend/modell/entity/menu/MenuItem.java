@@ -1,9 +1,7 @@
-package com.codecool.backend.modell.menu;
+package com.codecool.backend.modell.entity.menu;
 
-import com.codecool.backend.modell.dish.Dish;
+import com.codecool.backend.modell.entity.dish.Dish;
 import jakarta.persistence.*;
-
-import java.time.LocalDate;
 
 @Entity
 public class MenuItem {
