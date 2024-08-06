@@ -1,6 +1,6 @@
 package com.codecool.backend.controller;
 
-import com.codecool.backend.modell.dto.DishDTO;
+import com.codecool.backend.modell.dto.food.DishDTO;
 import com.codecool.backend.service.DishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,11 +1,13 @@
 package com.codecool.backend.modell.entity.member;
 
-import com.codecool.backend.modell.dto.NewMemberDTO;
+import com.codecool.backend.modell.dto.member.AddressDTO;
+import com.codecool.backend.modell.dto.member.MemberDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -14,8 +16,7 @@ public class Member {
     @Id
     @GeneratedValue
     private long id;
-    @GeneratedValue
-    private long publicId;
+    private UUID publicId;
     private String username;
     private String password;
     private String email;
@@ -32,7 +33,8 @@ public class Member {
     )
     private Set<MemberRole> roles;
 
-    public Member(String username, String password, String email, String firstName, String lastName, String phone, Address address) {
+    public Member(String username, String password, String email, String firstName, String lastName, String phone, Address address, Set<MemberRole> roles) {
+        this.publicId = UUID.randomUUID();
         this.username = username;
         this.password = password;
         this.email = email;
@@ -40,24 +42,21 @@ public class Member {
         this.lastName = lastName;
         this.phone = phone;
         this.address = address;
-        this.roles = new HashSet<>();
+        this.roles = new HashSet<>(roles);
     }
 
     public Member() {
     }
 
 
-    public NewMemberDTO toDTO() {
-        return new NewMemberDTO(
+    public MemberDTO toDTO() {
+        return new MemberDTO(
                 username,
                 email,
                 firstName,
                 lastName,
                 phone,
-                address.getStreetAndHouseNumber(),
-                address.getSettlement(),
-                address.getCountry(),
-                address.getZIP(),
+                new AddressDTO(address.getStreetAndHouseNumber(),address.getSettlement(),address.getCountry(),address.getZIP()),
                 roles
         );
     }

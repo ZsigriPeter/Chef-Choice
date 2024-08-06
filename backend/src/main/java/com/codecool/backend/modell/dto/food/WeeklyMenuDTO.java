@@ -1,4 +1,4 @@
-package com.codecool.backend.modell.dto;
+package com.codecool.backend.modell.dto.food;
 
 import java.time.LocalDate;
 import java.util.List;
