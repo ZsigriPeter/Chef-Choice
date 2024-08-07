@@ -16,7 +16,9 @@ const UserProvider = ({children}) => {
             }
         })
             .then((res) => res.json())
-            .then((user) => setUser(user))
+            .then((user) => {
+                setUser(user);
+            })
             .finally(() => {
                 setLoading(false);
             });

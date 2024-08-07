@@ -6,7 +6,7 @@ import WeeklyMenuPage from "./pages/WeeklyMenuPage";
 import FoodListPage from "./pages/FoodListPage";
 import SignUp from "./pages/SignUp";
 import React from "react";
-import Userprofile from "./pages/Userprofile";
+import Userprofile from "./pages/userprofile/Userprofile";
 
 const router = createBrowserRouter([
   {

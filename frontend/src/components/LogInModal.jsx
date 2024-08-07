@@ -85,7 +85,8 @@ function LogInModal() {
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => {
                         OnLogin();
-                        navigate("/");
+                        navigate("/user-profile");
+                        setShow(false);
                     }}>
                         Log In
                     </Button>
