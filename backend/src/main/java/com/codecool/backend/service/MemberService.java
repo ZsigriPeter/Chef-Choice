@@ -1,20 +1,30 @@
 package com.codecool.backend.service;
 
+import com.codecool.backend.modell.dto.member.MemberAdminDTO;
+import com.codecool.backend.modell.dto.member.MemberDTOMapper;
 import com.codecool.backend.modell.dto.member.MemberLoginDTO;
+import com.codecool.backend.modell.entity.member.MemberRole;
+import com.codecool.backend.modell.entity.member.Role;
 import com.codecool.backend.repository.AddressRepository;
 import com.codecool.backend.repository.MemberRepository;
 import com.codecool.backend.modell.entity.member.Member;
+import com.codecool.backend.repository.RoleRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
     private final AddressRepository addressRepository;
+    private final RoleRepository roleRepository;
 
-    public MemberService(MemberRepository memberRepository, AddressRepository addressRepository) {
+    public MemberService(MemberRepository memberRepository, AddressRepository addressRepository, RoleRepository roleRepository) {
         this.memberRepository = memberRepository;
         this.addressRepository = addressRepository;
+        this.roleRepository = roleRepository;
     }
 
     public void signUp(Member member) {
@@ -33,4 +43,32 @@ public class MemberService {
         }
         return memberRepository.findByEmail(email).get();
     }*/
+
+    public List<MemberAdminDTO> getAllMembers() {
+        return memberRepository.findAll().stream()
+                .map(MemberDTOMapper::toMemberAdminDTO).toList();
+    }
+
+    public void deleteMember(Long id) {
+        if (memberRepository.existsById(id)) memberRepository.deleteById(id);
+        else throw new NoSuchElementException("No such user."); // TODO ex.handling
+    }
+
+    public void addAdminRole(Long userId) {
+        Member member = memberRepository.findById(userId).orElseThrow(); // TODO ex.handling
+
+        MemberRole role = roleRepository.findMemberRoleByRole(Role.ROLE_ADMIN).orElseThrow(); // TODO ex.handling
+
+        member.getRoles().add(role);
+        memberRepository.save(member);
+    }
+
+    public void removeAdminRole(Long userId) {
+        Member member = memberRepository.findById(userId).orElseThrow(); // TODO ex.handling
+
+        MemberRole role = roleRepository.findMemberRoleByRole(Role.ROLE_ADMIN).orElseThrow(); // TODO ex.handling
+
+        member.getRoles().remove(role);
+        memberRepository.save(member);
+    }
 }

@@ -7,6 +7,7 @@ import FoodListPage from "./pages/FoodListPage";
 import SignUp from "./pages/SignUp";
 import React from "react";
 import Userprofile from "./pages/userprofile/Userprofile";
+import AdminPage from "./pages/AdminPage";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       {
         path:"/user-profile",
         element: <Userprofile/>
-      }
+      },
+      {
+        path: "/admin",
+        element: <AdminPage/>,
+      },
     ],
   },
 ]);
