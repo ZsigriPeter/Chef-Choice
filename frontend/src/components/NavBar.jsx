@@ -18,7 +18,7 @@ function NavBar() {
                         <li><a href="/food-list">Food list</a></li>
                         <li><a href="/">Orders</a></li>
                         <li><a href="/">Favorites</a></li>
-                        <li><a href="/">User profile</a></li>
+                        <li><a href="/user-profile">User profile</a></li>
                         <li><LogInModal/></li>
                     </ul>
                 </nav>

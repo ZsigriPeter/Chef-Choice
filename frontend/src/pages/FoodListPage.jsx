@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import DishList from "../components/menu/DishList";
 
 function fetchFoodList() {
-    return fetch("/food-list").then(res => res.json());
+    return fetch("/api/public/food-list").then(res => res.json());
 }
 
 function FoodListPage() {
