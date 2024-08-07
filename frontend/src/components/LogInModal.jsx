@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import {Link, useNavigate} from "react-router-dom";
 
-async function fetchLogIn(userData) {
+import {Link, useNavigate} from "react-router-dom";
+import {useUser} from "../context/UserProvider";
+
+
+/*async function fetchLogIn(userData) {
     console.log(userData)
     const res = await fetch("/api/public/login", {
         method: 'POST',
@@ -12,34 +15,26 @@ async function fetchLogIn(userData) {
         body: JSON.stringify(userData)
     });
     return res;
-}
+}*/
 
 function LogInModal() {
     const [show, setShow] = useState(false);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [memberData, setMemberData] = useState(null);
+    const {user, login, logout} = useUser();
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const navigate = useNavigate();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [memberData,setMemberData] = useState(null)
 
-    async function OnLogin() {
+
+    const OnLogin = () => {
         const userData = {
             username,
             password
         };
-
-        try {
-            const result = await fetchLogIn(userData);
-            const data = await result.json();
-            setMemberData(data);
-            console.log("result");
-            console.log(data);
-            console.log(memberData);
-        } catch (error) {
-            console.error('Error logging in:', error);
-        }
+        login(userData);
     }
 
     return (
@@ -54,26 +49,29 @@ function LogInModal() {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Username:</Form.Label>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Username:</Form.Label><br/>
                             <Form.Control
-                                type="text"
-                                placeholder="Username"
+                                placeholder="username"
                                 autoFocus
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
+                                controlId="exampleForm.ControlInput1"
                             />
-                            <br/>
-                            <Form.Label>Password:</Form.Label>
+                            <Form.Label>Password:</Form.Label><br/>
                             <Form.Control
-                                type="password"
+                                type={"password"}
+                                placeholder="password"
+                                autoFocus
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                controlId="exampleForm.ControlInput2"
                             />
+
                         </Form.Group>
                         {
                             memberData ? (
-                                <p >
+                                <p>
                                     Greetings {memberData.firstName} {memberData.lastName}
                                 </p>
                             ) : (
@@ -85,10 +83,10 @@ function LogInModal() {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={()=> {OnLogin();
-                        if(memberData) {
-                            navigate('/');
-                        }
+                    <Button variant="secondary" onClick={() => {
+                        OnLogin();
+                        navigate("/user-profile");
+                        setShow(false);
                     }}>
                         Log In
                     </Button>

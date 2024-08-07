@@ -16,8 +16,8 @@ function getStartDateOfCurrentWeek() {
 
 function getStartDateStringOfWeek(actualDate) {
     return `${actualDate.getUTCFullYear()}-${(actualDate.getMonth() + 1).toString().padStart(2, '0')}-${actualDate.getUTCDate().toString().padStart(2, '0')}`
-
 }
+
 
 function WeeklyMenuPage() {
     const [menu, setMenu] = useState(null);
