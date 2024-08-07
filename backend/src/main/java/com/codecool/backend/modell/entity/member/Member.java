@@ -47,17 +47,4 @@ public class Member {
 
     public Member() {
     }
-
-
-    public MemberDTO toDTO() {
-        return new MemberDTO(
-                username,
-                email,
-                firstName,
-                lastName,
-                phone,
-                new AddressDTO(address.getStreetAndHouseNumber(),address.getSettlement(),address.getCountry(),address.getZIP()),
-                roles
-        );
-    }
 }

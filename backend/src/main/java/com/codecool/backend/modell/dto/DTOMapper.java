@@ -1,7 +1,12 @@
-package com.codecool.backend.modell.dto.food;
+package com.codecool.backend.modell.dto;
 
+import com.codecool.backend.modell.dto.food.*;
+import com.codecool.backend.modell.dto.member.AddressDTO;
+import com.codecool.backend.modell.dto.member.MemberRoleDTO;
 import com.codecool.backend.modell.entity.dish.Allergen;
 import com.codecool.backend.modell.entity.dish.Dish;
+import com.codecool.backend.modell.entity.member.Address;
+import com.codecool.backend.modell.entity.member.MemberRole;
 import com.codecool.backend.modell.entity.menu.CourseType;
 import com.codecool.backend.modell.entity.menu.MenuItem;
 import com.codecool.backend.modell.entity.menu.WeeklyMenu;
@@ -58,5 +63,22 @@ public class DTOMapper {
 
     public static AllergenDTO toAllergenDTO(Allergen allergen) {
         return new AllergenDTO(allergen.getId(), allergen.getName());
+    }
+
+    public static Set<MemberRoleDTO> toMemberRoleDTOSet(Set<MemberRole> memberRoles) {
+        return memberRoles.stream().map(DTOMapper::toMemberRoleDTO).collect(Collectors.toSet());
+    }
+
+    public static MemberRoleDTO toMemberRoleDTO(MemberRole memberRole) {
+        return new MemberRoleDTO(memberRole.getRole());
+    }
+
+    public static AddressDTO toAddressDTO(Address address) {
+        return new AddressDTO(
+                address.getStreetAndHouseNumber(),
+                address.getSettlement(),
+                address.getCountry(),
+                address.getZIP()
+        );
     }
 }

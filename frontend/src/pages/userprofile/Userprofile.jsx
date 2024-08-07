@@ -1,22 +1,24 @@
 import {useUser} from "../../context/UserProvider";
 import styles from "./Userprofile.module.css";
 
-function Userprofile(){
+function Userprofile() {
     const {user, getMe} = useUser();
-    if(user){
-    console.log(user.username)
+    if (!user) {
+        //getMe();
+        console.log(user)
     }
-    return(
+    return (
         <>
-            {user&&
+            {user &&
                 <div className={styles.infoDiv}>
 
-            <h1>
-                {user.username}
-            </h1>
-            </div>
+                    <h1>
+                        {user.username}
+                    </h1>
+                </div>
             }
         </>
     )
 }
+
 export default Userprofile;

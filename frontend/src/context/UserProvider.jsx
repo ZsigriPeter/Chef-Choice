@@ -1,12 +1,19 @@
-import {createContext, useCallback, useContext, useState} from "react";
+import {createContext, useCallback, useContext, useEffect, useState} from "react";
 
 const UserContext = createContext({});
 
 const getToken = () => localStorage.getItem("token");
 const setToken = (token) => localStorage.setItem("token", token);
 
+const setCurrentUser = (user) => sessionStorage.setItem("currentUser", user);
+
+const getInitialState = () => {
+    const currentUser = sessionStorage.getItem("currentUser");
+    return currentUser ? JSON.parse(currentUser) : null
+}
+
 const UserProvider = ({children}) => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(getInitialState);
     const [loading, setLoading] = useState();
 
     const getMe = useCallback((token) => {
@@ -18,11 +25,16 @@ const UserProvider = ({children}) => {
             .then((res) => res.json())
             .then((user) => {
                 setUser(user);
+                //console.log(JSON.stringify(user))
             })
             .finally(() => {
                 setLoading(false);
             });
     }, []);
+
+    useEffect(() => {
+        sessionStorage.setItem("currentUser", JSON.stringify(user))
+    }, [user])
 
     const login = (credentials) => {
         fetch("/api/public/login", {
@@ -46,6 +58,7 @@ const UserProvider = ({children}) => {
     const logout = () => {
         setUser(null);
         setToken("");
+        setCurrentUser("");
     }
 
     return (
