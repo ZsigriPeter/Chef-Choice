@@ -27,6 +27,11 @@ public class AdminController {
          return members;
     }
 
+    @PatchMapping("/member/{id}")
+    public ResponseEntity<?> updateMember(@PathVariable Long id) {
+        return ResponseEntity.ok().build();
+    }
+
     @DeleteMapping("/member/{id}")
     public ResponseEntity<?> deleteMember(@PathVariable Long id) {
         return ResponseEntity.status(200).build();

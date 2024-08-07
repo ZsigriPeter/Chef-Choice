@@ -41,6 +41,7 @@ const addAdmin = (id) => {
         }
     ).then(resp => resp.statusText)
 }
+
 const removeAdmin = (id) => {
     return fetch(`api/admin/member/remove-admin/${id}`,
         {
@@ -55,6 +56,23 @@ const removeAdmin = (id) => {
                 }
         }
     ).then(resp => resp.statusText)
+}
+
+const updateMember = (member) => {
+    return fetch(`api/admin/member/${member.id}`,
+        {
+            method:
+                "PATCH",
+            headers:
+                {
+                    'Content-Type':
+                        'application/json',
+                    'Authorization':
+                        `Bearer ${localStorage.getItem("jwt")}`
+                },
+            body: JSON.stringify(member)
+        }
+    ).then(res => res.statusText)
 }
 
 const MemberEditor = () => {
@@ -107,10 +125,14 @@ const MemberEditor = () => {
         setIdToUpdate(null);
     }
 
-    const handleSaveUpdate = (newMember) => {
+    const handleSaveUpdate = (member) => {
         setLoading(true);
-        const member = members.find(member => member.id === idToUpdate)
-       //member = {...newMember}
+        updateMember(member).then(statusText => {
+            setLoading(false);
+            if (statusText==="OK") alert(`Member (ID=${member.id}) has been updated.`)
+            else alert(statusText)
+            setIdToUpdate(null);
+        })
     }
 
     if (loading === true) return <p>Loading...</p>
@@ -130,7 +152,6 @@ const MemberEditor = () => {
                 member={members.find(member => member.id === idToUpdate)}
                 onSave={handleSaveUpdate}
                 onCancel={handleCancelUpdate}
-                disabled={loading}
             />
         </>
 }

@@ -1,6 +1,7 @@
 import {useState} from "react";
 
-const MemberForm = ({member, onCancel, onSave, disabled}) => {
+const MemberForm = ({member, onCancel, onSave}) => {
+    const [disabled, setDisabled] = useState(true)
     const [userName, setUserName] = useState(member?.username ?? "");
     const [email, setEmail] = useState(member?.email ?? "");
     const [firstName, setFirstName] = useState(member?.firstName ?? "");
@@ -31,7 +32,7 @@ const MemberForm = ({member, onCancel, onSave, disabled}) => {
     }
 
     return <>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} onChange={()=> setDisabled(false)}>
             <h3>Update member data for member ID={member.id}</h3>
 
             <div>
