@@ -26,11 +26,11 @@ public class MemberService {
         }
     }
 
-    public Member tryToLogIn(MemberLoginDTO memberLoginDTO) {
-        String email = memberLoginDTO.email();
+/*    public Member tryToLogIn(MemberLoginDTO memberLoginDTO) {
+        String username = memberLoginDTO.username();
         if (memberRepository.findByEmail(email).isEmpty()) {
             return null;
         }
         return memberRepository.findByEmail(email).get();
-    }
+    }*/
 }

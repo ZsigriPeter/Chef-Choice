@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-
-import NavBar from './components/NavBar';
 import './index.css';
-import MainPage from './pages/MainPage';
 import reportWebVitals from './reportWebVitals';
 import WeeklyMenuPage from "./pages/WeeklyMenuPage";
 import AdminPage from "./pages/AdminPage";
 import FoodListPage from "./pages/FoodListPage";
 import SignUp from "./pages/SignUp";
+import App from "./App";
+import UserProvider from "./context/UserProvider";
+import NavBar from "./components/NavBar";
+import MainPage from "./pages/MainPage";
+import {createBrowserRouter} from "react-router-dom";
 
 
 const router = createBrowserRouter([
@@ -45,10 +46,15 @@ const router = createBrowserRouter([
     },
 ]);
 
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router}/>
+        <UserProvider>
+            <App/>
+        </UserProvider>
     </React.StrictMode>
 );
 

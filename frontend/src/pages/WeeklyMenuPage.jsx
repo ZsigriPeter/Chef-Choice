@@ -5,7 +5,7 @@ import WeekDateTab from "../components/menu/WeekDateTab";
 import {useSearchParams} from "react-router-dom";
 
 const fetchMenuOfTheWeek = (startDate) => {
-    return fetch(`/weekly-menu?date=${startDate}`).then((res) => res.json());
+    return fetch(`/api/public/weekly-menu?date=${startDate}`).then((res) => res.json());
 }
 
 function getStartDateOfCurrentWeek() {
@@ -15,9 +15,9 @@ function getStartDateOfCurrentWeek() {
 }
 
 function getStartDateStringOfWeek(actualDate) {
-    return `${actualDate.getUTCFullYear()}-${(actualDate.getMonth() + 1).toString().padStart(2, '0')}-${actualDate.getUTCDate()}`
-
+    return `${actualDate.getUTCFullYear()}-${(actualDate.getMonth() + 1).toString().padStart(2, '0')}-${actualDate.getUTCDate().toString().padStart(2, '0')}`
 }
+
 
 function WeeklyMenuPage() {
     const [menu, setMenu] = useState(null);
@@ -28,11 +28,14 @@ function WeeklyMenuPage() {
         const startDate = searchParams.get('date')
 
         if (startDate) {
-            setCurrentWeekStartDate(startDate)
+            fetchMenuOfTheWeek(startDate).then((menu) => {
+                setMenu(menu)
+            });
+        } else {
+            fetchMenuOfTheWeek(getStartDateStringOfWeek(getStartDateOfCurrentWeek())).then((menu) => {
+                setMenu(menu)
+            });
         }
-        fetchMenuOfTheWeek(currentWeekStartDate).then((menu) => {
-            setMenu(menu)
-        });
 
     }, []);
 
