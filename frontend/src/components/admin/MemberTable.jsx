@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const MemberTable = ({members, onDelete, onAddAdmin, onRemoveAdmin}) => {
+const MemberTable = ({members, onDelete, onAddAdmin, onRemoveAdmin, onUpdate}) => {
     const [idToDelete, setIdToDelete] = useState(null)
 
     return <div>
@@ -32,7 +32,9 @@ const MemberTable = ({members, onDelete, onAddAdmin, onRemoveAdmin}) => {
                             }
                         </td>
                         <td>
-                            <button type="button">Update...</button>
+                            <button type="button"
+                                    onClick={() => onUpdate(member.id)}>Update...
+                            </button>
                         </td>
                         <td>{idToDelete === member.id ?
                             <>

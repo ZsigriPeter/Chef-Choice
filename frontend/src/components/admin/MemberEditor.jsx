@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import MemberTable from "./MemberTable";
+import MemberForm from "./MemberForm";
 
 const getAllMembers = () => {
     return fetch("api/admin/member", {
@@ -57,11 +58,15 @@ const removeAdmin = (id) => {
 }
 
 const MemberEditor = () => {
-    const [members, setMembers] = useState([])
+    const [members, setMembers] = useState([]);
+    const [idToUpdate, setIdToUpdate] = useState(null);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getAllMembers().then(resp => {
             setMembers(resp);
+            console.log(resp);
+            setLoading(false);
         })
     }, [])
 
@@ -94,16 +99,40 @@ const MemberEditor = () => {
         })
     }
 
-    return <>
+    const handleClickUpdate = (id) => {
+        setIdToUpdate(id)
+    }
+
+    const handleCancelUpdate = () => {
+        setIdToUpdate(null);
+    }
+
+    const handleSaveUpdate = (newMember) => {
+        setLoading(true);
+        const member = members.find(member => member.id === idToUpdate)
+       //member = {...newMember}
+    }
+
+    if (loading === true) return <p>Loading...</p>
+
+    else if (idToUpdate === null) return <>
         <h3>Member editor</h3>
         <MemberTable members={members}
                      onDelete={handleDelete}
                      onAddAdmin={handleAddAdmin}
                      onRemoveAdmin={handleRemoveAdmin}
+                     onUpdate={handleClickUpdate}
         />
-
-
     </>
+
+    else return <>
+            <MemberForm
+                member={members.find(member => member.id === idToUpdate)}
+                onSave={handleSaveUpdate}
+                onCancel={handleCancelUpdate}
+                disabled={loading}
+            />
+        </>
 }
 
 export default MemberEditor;

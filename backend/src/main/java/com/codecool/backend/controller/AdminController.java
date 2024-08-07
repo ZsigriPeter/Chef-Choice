@@ -1,20 +1,25 @@
 package com.codecool.backend.controller;
 
+import com.codecool.backend.modell.dto.member.AddressDTO;
 import com.codecool.backend.modell.dto.member.MemberAdminDTO;
-import com.codecool.backend.modell.member.Member;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
     private List<MemberAdminDTO> members = List.of(
-            new MemberAdminDTO(1L, "member1"
-                    , List.of("ROLE_USER","ROLE_ADMIN")),
-            new MemberAdminDTO(2L, "member2"
-                    , List.of("ROLE_USER"))
+            new MemberAdminDTO(1L, "member1", "member1@email.com"
+                    ,"John","Doe","+36 30 1234567"
+                    ,new AddressDTO("Main Street 10","Budapest","Hungary",1051)
+                    , Set.of("ROLE_USER","ROLE_ADMIN")),
+            new MemberAdminDTO(2L, "member2", "member2@email.com"
+                    ,"Mike","Smith","+36 70 1234567"
+                    ,new AddressDTO("Main Street 12","Budapest","Hungary",1051)
+                    , Set.of("ROLE_USER"))
     );
 
     @GetMapping("/member")
@@ -29,7 +34,6 @@ public class AdminController {
 
     @PatchMapping("/member/add-admin/{id}")
     public ResponseEntity<?> addAdminRoleToMember(@PathVariable Long id) {
-        MemberAdminDTO member =
         return ResponseEntity.ok().build();
     }
 

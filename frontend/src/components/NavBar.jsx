@@ -1,8 +1,6 @@
 import {Link, Outlet} from 'react-router-dom';
 import Footer from './Footer';
 import LogInModal from "./LogInModal";
-import {hasPointerEvents} from "@testing-library/user-event/dist/utils";
-import AdminNavBar from "./admin/AdminNavBar";
 import logo from './Mask group.png';
 
 function NavBar() {
