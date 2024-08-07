@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Objects;
 import java.util.Set;
@@ -25,18 +26,22 @@ public class MemberController {
     private final MemberService memberService;
     private final RoleRepository roleRepository;
     private final WebClient webClient;
+    private final PasswordEncoder encoder;
 
     @Autowired
-    public MemberController(MemberService memberService, RoleRepository roleRepository, WebClient webClient) {
+    public MemberController(MemberService memberService, RoleRepository roleRepository, WebClient webClient, PasswordEncoder encoder) {
         this.memberService = memberService;
         this.roleRepository = roleRepository;
         this.webClient = webClient;
+        this.encoder = encoder;
     }
 
     @PostMapping("/signup")
     public void signup(@RequestBody CreateNewMemberRequest createNewMemberRequest) {
         Address address = new Address(createNewMemberRequest.getStreetAndHouseNumber(), createNewMemberRequest.getSettlement(), createNewMemberRequest.getCountry(), createNewMemberRequest.getZIP());
-        Member member = new Member(createNewMemberRequest.getUsername(), createNewMemberRequest.getPassword(), createNewMemberRequest.getEmail()
+        Member member = new Member(createNewMemberRequest.getUsername()
+                , encoder.encode(createNewMemberRequest.getPassword())
+                , createNewMemberRequest.getEmail()
                 , createNewMemberRequest.getFirstName(), createNewMemberRequest.getLastName(), createNewMemberRequest.getPhone(), address
                 , Set.of(Objects.requireNonNull(roleRepository.findMemberRoleByRole(Role.ROLE_USER)).orElseThrow()));
         memberService.signUp(member);

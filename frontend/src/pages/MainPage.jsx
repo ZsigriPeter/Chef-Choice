@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 const fetchMainPage = () => {
-    return fetch("/main-page").then((res) => res.json());
+    return fetch("/api/public/main-page").then((res) => res.json());
 };
 
 function MainPage() {

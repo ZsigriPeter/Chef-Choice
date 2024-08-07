@@ -2,11 +2,11 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 async function fetchLogIn(userData) {
     console.log(userData)
-    const res = await fetch("/login", {
+    const res = await fetch("/api/public/login", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(userData)
@@ -20,12 +20,14 @@ function LogInModal() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const navigate = useNavigate();
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [memberData,setMemberData] = useState(null)
 
     async function OnLogin() {
         const userData = {
-            email,
+            username,
+            password
         };
 
         try {
@@ -42,9 +44,9 @@ function LogInModal() {
 
     return (
         <div className="log-in-component">
-            <a className="page-button" onClick={handleShow}>
+            <Link className="page-button" onClick={handleShow} to="">
                 Log In
-            </a>
+            </Link>
 
             <Modal className="login-modal" show={show} onHide={handleClose}>
                 <Modal.Header closeButton={true}>
@@ -53,13 +55,20 @@ function LogInModal() {
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Email address:</Form.Label>
+                            <Form.Label>Username:</Form.Label>
                             <Form.Control
-                                type="email"
-                                placeholder="name@example.com"
+                                type="text"
+                                placeholder="Username"
                                 autoFocus
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <br/>
+                            <Form.Label>Password:</Form.Label>
+                            <Form.Control
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </Form.Group>
                         {
