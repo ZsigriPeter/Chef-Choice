@@ -3,7 +3,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import MainPage from "./pages/MainPage";
 import WeeklyMenuPage from "./pages/WeeklyMenuPage";
-import FoodListPage from "./pages/FoodListPage";
+import FoodListPage from "./pages/food-list-page/FoodListPage";
 import SignUp from "./pages/SignUp";
 import React from "react";
 import Userprofile from "./pages/userprofile/Userprofile";
