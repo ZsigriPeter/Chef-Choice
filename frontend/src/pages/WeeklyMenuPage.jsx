@@ -28,9 +28,9 @@ function WeeklyMenuPage() {
         const startDate = searchParams.get('date')
 
         if (startDate) {
-        fetchMenuOfTheWeek(startDate).then((menu) => {
-            setMenu(menu)
-        });
+            fetchMenuOfTheWeek(startDate).then((menu) => {
+                setMenu(menu)
+            });
         } else {
             fetchMenuOfTheWeek(getStartDateStringOfWeek(getStartDateOfCurrentWeek())).then((menu) => {
                 setMenu(menu)

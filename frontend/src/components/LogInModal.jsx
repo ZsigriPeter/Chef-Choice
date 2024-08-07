@@ -2,12 +2,14 @@ import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import {useNavigate} from "react-router-dom";
+
+import {Link, useNavigate} from "react-router-dom";
 import {useUser} from "../context/UserProvider";
+
 
 /*async function fetchLogIn(userData) {
     console.log(userData)
-    const res = await fetch("/login", {
+    const res = await fetch("/api/public/login", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(userData)
@@ -26,6 +28,7 @@ function LogInModal() {
     const handleShow = () => setShow(true);
     const navigate = useNavigate();
 
+
     const OnLogin = () => {
         const userData = {
             username,
@@ -36,9 +39,9 @@ function LogInModal() {
 
     return (
         <div className="log-in-component">
-            <a className="page-button" onClick={handleShow}>
+            <Link className="page-button" onClick={handleShow} to="">
                 Log In
-            </a>
+            </Link>
 
             <Modal className="login-modal" show={show} onHide={handleClose}>
                 <Modal.Header closeButton={true}>
@@ -47,7 +50,7 @@ function LogInModal() {
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3">
-                            <Form.Label>Username:</Form.Label>
+                            <Form.Label>Username:</Form.Label><br/>
                             <Form.Control
                                 placeholder="username"
                                 autoFocus
@@ -55,7 +58,7 @@ function LogInModal() {
                                 onChange={(e) => setUsername(e.target.value)}
                                 controlId="exampleForm.ControlInput1"
                             />
-                            <Form.Label>Password:</Form.Label>
+                            <Form.Label>Password:</Form.Label><br/>
                             <Form.Control
                                 type={"password"}
                                 placeholder="password"
@@ -64,6 +67,7 @@ function LogInModal() {
                                 onChange={(e) => setPassword(e.target.value)}
                                 controlId="exampleForm.ControlInput2"
                             />
+
                         </Form.Group>
                         {
                             memberData ? (

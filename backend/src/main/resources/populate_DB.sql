@@ -134,20 +134,32 @@ VALUES
     (2, '90001', 'USA', 'Los Angeles', '456 Elm St Unit 5C'),
     (3, '94105', 'USA', 'San Francisco', '789 Pine St Suite 6D'),
     (4, '60601', 'USA', 'Chicago', '101 Maple St Apt 7E'),
-    (5, '75201', 'USA', 'Dallas', '202 Oak St Unit 8F');
+    (5, '75201', 'USA', 'Dallas', '202 Oak St Unit 8F'),
+    (6, '75111', 'USA', 'Dallas', '10 Oak St Unit 3D');
 
-INSERT INTO public.member (id, username, password, email, first_name, last_name, phone, address_id)
+INSERT INTO public.member (id, username, password, email, public_id, first_name, last_name, phone, address_id)
 VALUES
-    (1, 'john.doe','123','john.doe@example.com', 'John', 'Doe', '555-1234', 1),
-    (2, 'jane.smith','123','jane.smith@example.com', 'Jane', 'Smith', '555-5678', 2),
-    (3, 'john.doe','123','michael.johnson@example.com', 'Michael', 'Johnson', '555-8765', 3),
-    (4, 'michael.johnson','123','emily.davis@example.com', 'Emily', 'Davis', '555-4321', 4),
-    (5, 'william.brown','123','william.brown@example.com', 'William', 'Brown', '555-9876', 5);
+    (1, 'john.doe','$2a$10$mXDB81q7Qs5Gt9EbCtBgrORggHD2vFSaJBlfGOjs9aGT9q.mus7kW','john.doe@example.com','0e2aa3a1-b6cb-428f-91dd-e884aeb16953', 'John', 'Doe', '555-1234', 1),
+    (2, 'jane.smith','$2a$10$mXDB81q7Qs5Gt9EbCtBgrORggHD2vFSaJBlfGOjs9aGT9q.mus7kW','jane.smith@example.com','1e2aa3a1-b6cb-428f-91dd-e884aeb16953', 'Jane', 'Smith', '555-5678', 2),
+    (3, 'michael.johnson','$2a$10$mXDB81q7Qs5Gt9EbCtBgrORggHD2vFSaJBlfGOjs9aGT9q.mus7kW','michael.johnson@example.com','2e2aa3a1-b6cb-428f-91dd-e884aeb16953', 'Michael', 'Johnson', '555-8765', 3),
+    (4, 'emily.davis','$2a$10$mXDB81q7Qs5Gt9EbCtBgrORggHD2vFSaJBlfGOjs9aGT9q.mus7kW','emily.davis@example.com','3e2aa3a1-b6cb-428f-91dd-e884aeb16953', 'Emily', 'Davis', '555-4321', 4),
+    (5, 'william.brown','$2a$10$mXDB81q7Qs5Gt9EbCtBgrORggHD2vFSaJBlfGOjs9aGT9q.mus7kW','william.brown@example.com','4e2aa3a1-b6cb-428f-91dd-e884aeb16953', 'William', 'Brown', '555-9876', 5),
+    (6, 'admin','$2a$10$mXDB81q7Qs5Gt9EbCtBgrORggHD2vFSaJBlfGOjs9aGT9q.mus7kW','admin@example.com','5e2aa3a1-b6cb-428f-91dd-e884aeb16953', 'The', 'Admin', '555-3333', 6);
 
 INSERT INTO public.member_role (id, role)
 VALUES
     (1, 'ROLE_USER'),
     (2, 'ROLE_ADMIN');
+
+INSERT INTO public.members_roles (user_id, role_id)
+VALUES
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (4, 1),
+    (5, 1),
+    (6, 1),
+    (6, 2);
 
 
 
