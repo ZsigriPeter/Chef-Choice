@@ -25,10 +25,10 @@ function WeeklyMenuPage() {
     const [searchParams,] = useSearchParams();
     const [orders, setOrders] = useState([]);
 
-    function setOrder(foodItemId, foodItemAmount) {
-        const food = {foodItemId, foodItemAmount};
+    function setOrder(menuItemId, menuItemAmount) {
+        const food = {menuItemId, menuItemAmount};
 
-        const updatedOrders = orders.filter(order => order.foodItemId !== foodItemId);
+        const updatedOrders = orders.filter(order => order.menuItemId !== menuItemId);
         updatedOrders.push(food);
         setOrders([...updatedOrders]);
         console.log(orders);

@@ -11,7 +11,7 @@ function MenuItem({menuItem, onOrder}) {
             </div>
             <input className={"amountInput"} type={"number"} min={0} max={100}
                    onChange={e =>
-                   {onOrder(menuItem.dish.id, e.target.value)}
+                   {onOrder(menuItem.id, e.target.value)}
             } />
         </div>
     )

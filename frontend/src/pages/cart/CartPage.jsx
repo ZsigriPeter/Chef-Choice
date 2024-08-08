@@ -15,11 +15,9 @@ function Cart() {
             {cartItems&&
             <form onSubmit={e => e.preventDefault()}>
                 {cartItems.map((item) => (
-                    <CartItem key={item.foodItemId} foodItemId={item.foodItemId}
-                              foodItemAmountParam={item.foodItemAmount} />
+                    <CartItem key={item.menuItemId} menuItemId={item.menuItemId}
+                              menuItemAmountParam={item.menuItemAmount} />
                 ))}
-                {/*<CartItem foodItemId={7} foodItemAmountParam={4}/>
-                <CartItem foodItemId={13} foodItemAmountParam={2}/>*/}
                 <button type="submit">Order</button>
             </form> }
         </div>

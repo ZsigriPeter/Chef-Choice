@@ -6,32 +6,37 @@ async function fetchFoodItemById(Id) {
     const res = await fetch(`/api/public/food?id=${Id}`);
     return res.json();
 }
+async function fetchMenuItemById(Id) {
+    const res = await fetch(`/api/public/menu-item?id=${Id}`);
+    return res.json();
+}
 
-function CartItem({ foodItemId, foodItemAmountParam }) {
-    const [foodItem, setFoodItem] = useState("");
-    const [foodItemAmount, setFoodItemAmount] = useState(foodItemAmountParam);
+function CartItem({ menuItemId, menuItemAmountParam }) {
+    const [menuItem, setMenuItem] = useState("");
+    const [menuItemAmount, setMenuItemAmount] = useState(menuItemAmountParam);
 
     useEffect(() => {
-        console.log(foodItemId);
-        console.log(foodItemAmountParam);
-        fetchFoodItemById(foodItemId)
+        console.log(menuItemId);
+        console.log(menuItemAmountParam);
+        fetchMenuItemById(menuItemId)
             .then((result) => {
-                setFoodItem(result);
+                setMenuItem(result);
                 console.log(result);
-                console.log(foodItemAmount);
+                console.log(menuItemAmount);
             })
-    }, [foodItemId]);
+    }, [menuItemId]);
 
     useEffect(() => {
-        setFoodItemAmount(foodItemAmountParam);
-    }, [foodItemAmountParam]);
+        setMenuItemAmount(menuItemAmountParam);
+    }, [menuItemAmountParam]);
 
     return (
         <>
-            {foodItemAmount>0&&
-            <div className={styles.CartItem} key={foodItemId}>
-                <label className={styles.ItemName} htmlFor={foodItem}>{foodItem.name}</label>
-                <input className={styles.ItemAmount} value={foodItemAmount} type="number" onChange={e => setFoodItemAmount(e.target.value)}/>
+            {(menuItemAmount>0&&menuItem)&&
+            <div className={styles.CartItem} key={menuItemId}>
+                <label className={styles.ItemName} htmlFor={menuItem}>{menuItem.dish.name} ({menuItem.dateOfDelivery})</label>
+                <input className={styles.ItemAmount} value={menuItemAmount} type="number"
+                       onChange={e => setMenuItemAmount(e.target.value)}/>
             </div>}
         </>
     );
