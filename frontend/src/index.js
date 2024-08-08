@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import WeeklyMenuPage from "./pages/WeeklyMenuPage";
 import AdminPage from "./pages/AdminPage";
-import FoodListPage from "./pages/FoodListPage";
+import FoodListPage from "./pages/food-list-page/FoodListPage";
 import SignUp from "./pages/SignUp";
 import App from "./App";
 import UserProvider from "./context/UserProvider";
