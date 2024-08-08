@@ -8,7 +8,7 @@ import SignUp from "./pages/SignUp";
 import React from "react";
 import Userprofile from "./pages/userprofile/Userprofile";
 import CartPage from "./pages/cart/CartPage";
-import AdminPage from "./pages/AdminPage";
+import AdminPage from "./pages/adminpage/AdminPage";
 
 const router = createBrowserRouter([
   {

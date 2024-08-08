@@ -1,5 +1,5 @@
 import {Link, Outlet} from 'react-router-dom';
-import Footer from '../Footer';
+import Footer from '../footer/Footer';
 import LogInModal from "../loginmodal/LogInModal";
 import cart from './shopping-cart.png'
 import styles from "./NavBar.module.css";

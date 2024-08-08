@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
-import EditorMain from "../components/admin/EditorMain";
+import EditorMain from "../../components/admin/EditorMain";
+import styles from "./AdminPage.module.css";
 
 const fetchUserContext = (token) => {
     return fetch("api/public/context",
@@ -29,17 +30,17 @@ function AdminPage() {
     console.log(localStorage.getItem("token"))
 
     return (
-        <div style={{color: "white"}}>
-            <h2>Admin page</h2>
+        <div className={styles.adminPage}>
+            <h2 className={styles.header}>Admin page</h2>
             { authorized ?
-                <>
-                    <ul>
+                <div >
+                    <ul className={styles.editorMenu}>
                         <li onClick={() => setPage("member-editor")}>Member editor</li>
                         <li onClick={() => setPage("dish-editor")}>Dish editor</li>
                         <li onClick={() => setPage("menu-editor")}>Menu editor</li>
                     </ul>
                     <EditorMain page={page}/>
-                </>
+                </div>
             :
                 <h2 style={{color: "red"}}>You are not authorized to view this page.</h2>
             }

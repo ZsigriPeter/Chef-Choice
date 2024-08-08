@@ -7,9 +7,6 @@
     align-items: center;
     justify-content: space-between;
     background: #242526;
-/*    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;*/
 }
 
 .hamburger {
@@ -22,12 +19,12 @@
     border-radius: 0.25em;
 }
 
-.hamburger:hover{
+.hamburger:hover {
     background-color: #3A3B3C;
     filter: drop-shadow(0 0.2rem 0.2rem black);
 }
 
-.hamburger:active{
+.hamburger:active {
     filter: drop-shadow(0 0rem 0rem black);
 
 }
@@ -43,63 +40,57 @@
     box-sizing: border-box;
 }
 
-.navLinks{
+.navLinks {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
 
-.navLinks li{
+.navLinks li {
     list-style: none;
 }
 
-.navLinks li a{
+.navLinks li a {
     color: #f2f2f2;
     text-decoration: none;
     font-size: 1.15em;
     font-weight: 500;
     padding: 0.5em 1em;
     border-radius: 0.25em;
-    /*
-    transition: all 0.3s ease;
-    */
-    /*
-    white-space: nowrap;
-    */
 }
 
-.navLinks li a:hover{
+.navLinks li a:hover {
     background: #3A3B3C;
     filter: drop-shadow(0 0.2rem 0.2rem black);
 }
 
-.navLinks li a:active{
+.navLinks li a:active {
     filter: drop-shadow(0 0rem 0rem black);
 }
 
-.logoclass{
+.logoclass {
     width: fit-content;
 }
 
-.icon{
+.icon {
     max-width: 1.5em;
     margin: auto;
 }
 
-.navLinks .cartLink{
+.navLinks .cartLink {
     background-color: white;
     justify-content: center;
-padding-top: 0.94rem;
-padding-bottom: 0.08rem;
+    padding-top: 0.94rem;
+    padding-bottom: 0.08rem;
 }
 
-@media (max-width: 768px){
-    .navbar{
+@media (max-width: 768px) {
+    .navbar {
         background: #242526;
         min-height: 13vh;
     }
 
-    .nav{
+    .nav {
         flex-wrap: wrap;
         margin: 0;
         padding: 5vw;
@@ -113,7 +104,6 @@ padding-bottom: 0.08rem;
     }
 
 
-
     .navLinks {
         display: none;
         flex-direction: column;
@@ -124,7 +114,7 @@ padding-bottom: 0.08rem;
         padding-left: 0;
     }
 
-    .navLinks li{
+    .navLinks li {
         margin: auto;
     }
 
@@ -140,7 +130,7 @@ padding-bottom: 0.08rem;
         box-sizing: border-box;
     }
 
-   .logout a {
+    .logout a {
         padding: 0.5rem;
         border-top: 1px solid white;
         width: 100%;
@@ -148,12 +138,11 @@ padding-bottom: 0.08rem;
     }
 
 
-
-    .logoclass{
+    .logoclass {
         max-width: 45vw;
     }
 
-    .icon{
+    .icon {
         max-width: 1em;
         background-color: white;
     }
