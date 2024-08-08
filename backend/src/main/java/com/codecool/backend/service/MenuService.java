@@ -1,7 +1,7 @@
 package com.codecool.backend.service;
 
 import com.codecool.backend.controller.NoMenuForDateException;
-import com.codecool.backend.modell.dto.food.DTOMapper;
+import com.codecool.backend.modell.dto.DTOMapper;
 import com.codecool.backend.modell.dto.food.MenuItemDTO;
 import com.codecool.backend.modell.dto.food.WeeklyMenuDTO;
 import com.codecool.backend.modell.entity.menu.MenuItem;

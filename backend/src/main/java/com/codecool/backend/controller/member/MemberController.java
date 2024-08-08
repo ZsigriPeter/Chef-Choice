@@ -1,5 +1,7 @@
 package com.codecool.backend.controller.member;
 
+import com.codecool.backend.modell.dto.DTOMapper;
+import com.codecool.backend.modell.dto.member.AddressDTO;
 import com.codecool.backend.modell.dto.member.MemberDTO;
 import com.codecool.backend.modell.dto.member.MemberLoginDTO;
 import com.codecool.backend.modell.entity.member.Address;
@@ -95,7 +97,16 @@ public class MemberController {
         String username = jwtUtils.getUserNameFromJwtToken(token);
         Optional<Member> member = memberRepository.findUserByUsername(username);
         if (member.isPresent()) {
-            return member.get().toDTO();
+            Member member1 = member.get();
+            return new MemberDTO(
+                    member1.getUsername(),
+                    member1.getEmail(),
+                    member1.getFirstName(),
+                    member1.getLastName(),
+                    member1.getPhone(),
+                    DTOMapper.toAddressDTO(member1.getAddress()),
+                    DTOMapper.toMemberRoleDTOSet(member1.getRoles())
+            );
         } else throw new MemberNotFoundException();
     }
 }

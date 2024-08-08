@@ -220,7 +220,6 @@ nav {
     color: white;
 }
 
-
 .menuItems {
     display: flex;
 }
@@ -318,3 +317,4 @@ nav {
 .page-button:hover {
     background: #3A3B3C;
 }
+

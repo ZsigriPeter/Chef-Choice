@@ -15,12 +15,13 @@ function NavBar() {
                         <img src={logo} className="logo-img" alt="logo of the webpage"></img>
                     </Link>
                     <ul className="nav-links">
-
                         <li><Link to="/weekly-menu">Weekly menu</Link></li>
                         <li><Link to="/cart"><img src={cart} className="icon" alt="Cart"/></Link></li>
                         <li><Link to="/food-list">Food list</Link></li>
+                        <li><Link to="/">Orders</Link></li>
                         <li><Link to="/">Favorites</Link></li>
                         <li><Link to="/user-profile">User profile</Link></li>
+                        <li><Link to={"/admin"}>Admin</Link></li>
                         <li><LogInModal/></li>
                     </ul>
                 </nav>
