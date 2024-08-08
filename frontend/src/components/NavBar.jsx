@@ -19,7 +19,7 @@ const fetchUserContext = (token) => {
 }
 
 function NavBar() {
-    const {user} = useUser();
+    const {user, logout} = useUser();
     const [hasAdminRole, setHasAdminRole] = useState(false)
 
     useEffect(() => {
@@ -56,6 +56,8 @@ function NavBar() {
                             <></>
                         }
                         <li><LogInModal/></li>
+                        <li><Link onClick={() => logout()} to="/user-profile">Logout</Link></li>
+
                     </ul>
                 </nav>
             </div>
