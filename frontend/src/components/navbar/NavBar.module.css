@@ -57,8 +57,12 @@
     background: #3A3B3C;
 }
 
-.logo{
+.logoclass{
     width: fit-content;
+}
+
+.icon{
+    max-width: 1em;
 }
 
 @media (max-width: 768px){
@@ -117,8 +121,12 @@
 
 
 
-    .logo{
+    .logoclass{
         max-width: 45vw;
+    }
+
+    .icon{
+        max-width: 1em;
     }
 
 }
