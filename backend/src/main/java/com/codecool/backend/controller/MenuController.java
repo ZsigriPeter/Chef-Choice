@@ -1,6 +1,7 @@
 package com.codecool.backend.controller;
 
 import com.codecool.backend.modell.dto.MainPageDTO;
+import com.codecool.backend.modell.dto.food.MenuItemDTO;
 import com.codecool.backend.modell.dto.food.WeeklyMenuDTO;
 import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MenuService;
@@ -23,6 +24,10 @@ public class MenuController {
         this.menuService = menuService;
     }
 
+    @GetMapping("/api/public/menu-item")
+    public MenuItemDTO getMenuItemById(@RequestParam long id) {
+        return menuService.getMenuItemById(id);
+    }
 
     @GetMapping("/api/public/weekly-menu")
     public WeeklyMenuDTO getMenu(@RequestParam LocalDate date) {
