@@ -280,3 +280,7 @@ code {
     background: #3A3B3C;
 }
 
+body.modal-open {
+    padding-right: 0 !important;
+}
+

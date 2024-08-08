@@ -8,17 +8,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useUser} from "../../context/UserProvider";
 
 
-/*async function fetchLogIn(userData) {
-    console.log(userData)
-    const res = await fetch("/api/public/login", {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(userData)
-    });
-    return res;
-}*/
-
-function LogInModal({onLogin}) {
+function LogInModal({onLogin, onToggle}) {
     const [show, setShow] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -36,39 +26,46 @@ function LogInModal({onLogin}) {
             password
         };
         login(userData);
-        onLogin(true);
+        onLogin();
     }
 
     return (
-        <div className="log-in-component">
-            <Link className={styles.pagebutton} onClick={handleShow} to="">
+        <div className={styles.loginComponent}>
+            <Link className={styles.pageButton} onClick={() => {
+                handleShow();
+                onToggle();
+            }} to="">
                 Log In
             </Link>
 
             <Modal className={styles.modal} show={show} onHide={handleClose}>
-                <Modal.Header closeButton={true}>
-                    <Modal.Title>User Login</Modal.Title>
+                <Modal.Header className={styles.header}>
+                    <Modal.Title className={styles.title}>User Login</Modal.Title>
+                    <button type="button" className={styles.closeButton} aria-label="Close" onClick={handleClose}>X
+                    </button>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3">
                             <Form.Label>Username:</Form.Label><br/>
                             <Form.Control
+                                className={styles.input}
                                 placeholder="username"
                                 autoFocus
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 controlId="exampleForm.ControlInput1"
-                            />
+                            /><br/>
                             <Form.Label>Password:</Form.Label><br/>
                             <Form.Control
+                                className={styles.input}
                                 type={"password"}
                                 placeholder="password"
                                 autoFocus
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 controlId="exampleForm.ControlInput2"
-                            />
+                            /><br/>
 
                         </Form.Group>
                         {
@@ -84,20 +81,27 @@ function LogInModal({onLogin}) {
                         }
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => {
-                        handleLogin();
-                        navigate("/");
-                        setShow(false);
-                    }}>
+                <Modal.Footer className={styles.footer}>
+                    <Button
+                        className={styles.modalButton1}
+                        variant="secondary"
+                        onClick={() => {
+                            handleLogin();
+                            navigate("/");
+                            setShow(false);
+                        }}
+                    >
                         Log In
                     </Button>
-                    <button onClick={() => {
-                        navigate("/sign-up");
-                        handleClose();
-                    }}>
+                    <Button
+                        className={styles.modalButton2}
+                        onClick={() => {
+                            navigate("/sign-up");
+                            handleClose();
+                        }}
+                    >
                         Sign Up
-                    </button>
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </div>

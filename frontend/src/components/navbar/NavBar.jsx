@@ -53,30 +53,40 @@ function NavBar() {
         <>
             <div className={styles.navbar}>
                 <nav className={styles.nav}>
-                    <Link to={"/"}>
-                        <img src={logo} className={styles.logoclass} alt="logo of the webpage"></img>
-                    </Link>
-                    <button className={styles.hamburger} onClick={toggleMenu}>
-                        ☰
-                    </button>
+                    <Link to={"/"}><img src={logo} className={styles.logoclass} alt="logo of the webpage"></img></Link>
+
+                    <button className={styles.hamburger} onClick={toggleMenu}> ☰</button>
+
                     <ul className={`${styles.navLinks} ${isOpen ? styles.navLinksOpen : ''}`}>
-                        <li><Link to="/weekly-menu">Weekly menu</Link></li>
-                        <li><Link to="/food-list">Food list</Link></li>
-                        <li><Link to="/">Favorites</Link></li>
-                        <li><Link to="/user-profile">User profile</Link></li>
-                        {hasAdminRole ?
-                            <li>< Link to={"/admin"}>Admin</Link></li>
-                            :
-                            <></>
+                        <li><Link to="/weekly-menu" onClick={toggleMenu}>Weekly menu</Link></li>
+                        <li><Link to="/food-list" onClick={toggleMenu}>Food list</Link></li>
+                        {user
+                            ? <>
+                                {/*<li><Link to="/" onClick={toggleMenu}>Favorites</Link></li>*/}
+                                <li><Link to="/user-profile" onClick={toggleMenu}>User profile</Link></li>
+                                {hasAdminRole
+                                    ? <li>< Link to={"/admin"} onClick={toggleMenu}>Admin</Link></li>
+                                    : <></>
+                                }
+                                <li>
+                                    <Link to="/cart" onClick={toggleMenu} className={styles.cartLink}>
+                                        <img src={cart} className={styles.icon} alt="Cart"/>
+                                    </Link>
+                                </li>
+                                <li>
+
+                                    <Link to={"/"}
+                                          onClick={() => {
+                                              logout();
+                                              setIsLoggedIn(false);
+                                              toggleMenu();
+                                          }}>Log out</Link>
+                                </li>
+                            </>
+                            : <li><LogInModal onLogin={changeIsLoggedIn}
+                                              onToggle={toggleMenu}/>
+                            </li>
                         }
-                        <li><Link style={{backgroundColor:"white"}} to="/cart"><img src={cart} className={styles.icon} alt="Cart"/></Link></li>
-                        {isLoggedIn ?
-                            <li><Link to={"/"} onClick={() => {
-                                logout();
-                                setIsLoggedIn(false);
-                            }}>Log out</Link></li>
-                            :
-                            <li><LogInModal onLogin={changeIsLoggedIn}/></li>}
                     </ul>
                 </nav>
             </div>
