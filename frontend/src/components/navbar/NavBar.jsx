@@ -64,7 +64,6 @@ function NavBar() {
                     <ul className={`${styles.navLinks} ${isOpen ? styles.navLinksOpen : ''}`}>
                         <li><Link to="/weekly-menu">Weekly menu</Link></li>
                         <li><Link to="/food-list">Food list</Link></li>
-                        <li><Link to="/">Orders</Link></li>
                         <li><Link to="/">Favorites</Link></li>
                         <li><Link to="/user-profile">User profile</Link></li>
                         {hasAdminRole ?
