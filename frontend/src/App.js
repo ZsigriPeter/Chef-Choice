@@ -7,6 +7,7 @@ import FoodListPage from "./pages/food-list-page/FoodListPage";
 import SignUp from "./pages/SignUp";
 import React from "react";
 import Userprofile from "./pages/userprofile/Userprofile";
+import CartPage from "./pages/cart/CartPage";
 import AdminPage from "./pages/AdminPage";
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         element: <Userprofile/>
       },
       {
+        path:"/cart",
+        element: <CartPage/>
+      }
+      ,{
         path: "/admin",
         element: <AdminPage/>,
       },

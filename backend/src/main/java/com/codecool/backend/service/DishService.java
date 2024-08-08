@@ -20,4 +20,8 @@ public class DishService {
     public List<DishDTO> getAllDishes() {
         return dishRepository.findAll().stream().map(DTOMapper::toDishDTO).toList();
     }
+
+    public DishDTO getDishById(long id) {
+        return DTOMapper.toDishDTO(dishRepository.findById(id).orElseThrow());
+    }
 }
