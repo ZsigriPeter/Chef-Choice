@@ -30,10 +30,13 @@ function WeeklyMenuPage() {
         if (startDate) {
             fetchMenuOfTheWeek(startDate).then((menu) => {
                 setMenu(menu)
+                console.log(menu)
             });
         } else {
             fetchMenuOfTheWeek(getStartDateStringOfWeek(getStartDateOfCurrentWeek())).then((menu) => {
                 setMenu(menu)
+                console.log(menu)
+
             });
         }
 

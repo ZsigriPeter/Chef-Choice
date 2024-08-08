@@ -1,0 +1,124 @@
+.nav {
+    max-width: 130em;
+    padding: 0 3em;
+    height: 5em;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #242526;
+/*    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;*/
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #242526;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.navLinks{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.navLinks li{
+    list-style: none;
+}
+
+.navLinks li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 1.15em;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.navLinks li a:hover{
+    background: #3A3B3C;
+}
+
+.logo{
+    width: fit-content;
+}
+
+@media (max-width: 768px){
+    .navbar{
+        background: #242526;
+        min-height: 13vh;
+    }
+
+    .nav{
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 5vw;
+        background: #242526;
+
+    }
+
+    .hamburger {
+        display: block;
+        margin: 0;
+    }
+
+    .navLinks {
+        display: none;
+        flex-direction: column;
+        gap: 5vh;
+        width: 100%;
+        padding-bottom: 2em;
+    }
+
+    .navLinks li{
+        margin: auto;
+    }
+
+
+    .navLinksOpen {
+        display: flex;
+        background: #242526;
+        /*
+        min-height: 30vh;
+        */
+    }
+
+    .navLinks a {
+        padding: 0.5rem;
+        border-top: 1px solid white;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+   .logout a {
+        padding: 0.5rem;
+        border-top: 1px solid white;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+
+    .logo{
+        max-width: 45vw;
+    }
+
+}

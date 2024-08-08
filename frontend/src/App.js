@@ -1,6 +1,6 @@
 import './App.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navbar/NavBar";
 import MainPage from "./pages/MainPage";
 import WeeklyMenuPage from "./pages/WeeklyMenuPage";
 import FoodListPage from "./pages/food-list-page/FoodListPage";
