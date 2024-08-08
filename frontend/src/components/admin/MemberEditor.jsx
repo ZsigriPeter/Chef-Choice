@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import MemberTable from "./MemberTable";
 import MemberForm from "./MemberForm";
+import {useUser} from "../../context/UserProvider";
 
 const getAllMembers = () => {
     return fetch("api/admin/member", {
@@ -8,7 +9,7 @@ const getAllMembers = () => {
         headers:
             {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem("jwt")}`
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
             }
     }).then(resp => resp.json())
 }
@@ -20,7 +21,7 @@ const deleteMember = (id) => {
             headers:
                 {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem("jwt")}`
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
                 }
         }
     ).then(status => status.statusText)
@@ -33,10 +34,8 @@ const addAdmin = (id) => {
                 "PATCH",
             headers:
                 {
-                    'Content-Type':
-                        'application/json',
-                    'Authorization':
-                        `Bearer ${localStorage.getItem("jwt")}`
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
                 }
         }
     ).then(resp => resp.statusText)
@@ -49,10 +48,8 @@ const removeAdmin = (id) => {
                 "PATCH",
             headers:
                 {
-                    'Content-Type':
-                        'application/json',
-                    'Authorization':
-                        `Bearer ${localStorage.getItem("jwt")}`
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
                 }
         }
     ).then(resp => resp.statusText)
@@ -65,25 +62,30 @@ const updateMember = (member) => {
                 "PATCH",
             headers:
                 {
-                    'Content-Type':
-                        'application/json',
-                    'Authorization':
-                        `Bearer ${localStorage.getItem("jwt")}`
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
                 },
             body: JSON.stringify(member)
         }
     ).then(res => res.statusText)
 }
 
+
 const MemberEditor = () => {
     const [members, setMembers] = useState([]);
     const [idToUpdate, setIdToUpdate] = useState(null);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const {user} = useUser();
+
+    // console.log("User: " + Object.keys(user));
+    // console.log("Username: " + user.username);
+    // console.log("Roles: " + user.roles.map(role => role.role));
+    // console.log("Token: " + localStorage.getItem("token"));
+
 
     useEffect(() => {
         getAllMembers().then(resp => {
             setMembers(resp);
-            console.log(resp);
             setLoading(false);
         })
     }, [])
@@ -129,7 +131,7 @@ const MemberEditor = () => {
         setLoading(true);
         updateMember(member).then(statusText => {
             setLoading(false);
-            if (statusText==="OK") alert(`Member (ID=${member.id}) has been updated.`)
+            if (statusText === "OK") alert(`Member (ID=${member.id}) has been updated.`)
             else alert(statusText)
             setIdToUpdate(null);
         })

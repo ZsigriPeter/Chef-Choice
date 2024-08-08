@@ -37,7 +37,8 @@ public class DTOMapper {
                 toCourseTypeDTO(menuItem.getCourse()),
                 menuItem.getCode(),
                 toDishDTO(menuItem.getDish()),
-                menuItem.getDayIndex()
+                menuItem.getDayIndex(),
+                menuItem.getWeeklyMenu().getStartDate().plusDays(menuItem.getDayIndex()-1)
         );
     }
 

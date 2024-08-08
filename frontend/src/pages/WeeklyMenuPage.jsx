@@ -23,6 +23,20 @@ function WeeklyMenuPage() {
     const [menu, setMenu] = useState(null);
     const [currentWeekStartDate, setCurrentWeekStartDate] = useState(getStartDateStringOfWeek(getStartDateOfCurrentWeek()));
     const [searchParams,] = useSearchParams();
+    const [orders, setOrders] = useState([]);
+
+    function setOrder(menuItemId, menuItemAmount) {
+        const food = {menuItemId, menuItemAmount};
+
+        const updatedOrders = orders.filter(order => order.menuItemId !== menuItemId);
+        updatedOrders.push(food);
+        setOrders([...updatedOrders]);
+        console.log(orders);
+    }
+
+    useEffect(() => {
+        localStorage.setItem("orders", JSON.stringify(orders));
+    }, [orders]);
 
     useEffect(() => {
         const startDate = searchParams.get('date')
@@ -57,7 +71,7 @@ function WeeklyMenuPage() {
                         <WeekDateTab menu={menu}/>
                     </button>
 
-                    <WeeklyMenu key={menu.id} weeklyMenu={menu}/>
+                    <WeeklyMenu key={menu.id} weeklyMenu={menu} onOrder={setOrder}/>
                 </div>
             }
         </div>
