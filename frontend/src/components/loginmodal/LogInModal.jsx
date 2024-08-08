@@ -2,9 +2,10 @@ import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import styles from './LoginModal.module.css';
 
 import {Link, useNavigate} from "react-router-dom";
-import {useUser} from "../context/UserProvider";
+import {useUser} from "../../context/UserProvider";
 
 
 /*async function fetchLogIn(userData) {
@@ -17,7 +18,7 @@ import {useUser} from "../context/UserProvider";
     return res;
 }*/
 
-function LogInModal() {
+function LogInModal({onLogin}) {
     const [show, setShow] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -29,21 +30,22 @@ function LogInModal() {
     const navigate = useNavigate();
 
 
-    const OnLogin = () => {
+    const handleLogin = () => {
         const userData = {
             username,
             password
         };
         login(userData);
+        onLogin(true);
     }
 
     return (
         <div className="log-in-component">
-            <Link className="page-button" onClick={handleShow} to="">
+            <Link className={styles.pagebutton} onClick={handleShow} to="">
                 Log In
             </Link>
 
-            <Modal className="login-modal" show={show} onHide={handleClose}>
+            <Modal className={styles.modal} show={show} onHide={handleClose}>
                 <Modal.Header closeButton={true}>
                     <Modal.Title>User Login</Modal.Title>
                 </Modal.Header>
@@ -84,7 +86,7 @@ function LogInModal() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => {
-                        OnLogin();
+                        handleLogin();
                         navigate("/");
                         setShow(false);
                     }}>

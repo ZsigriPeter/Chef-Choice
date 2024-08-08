@@ -109,4 +109,9 @@ public class MemberController {
             );
         } else throw new MemberNotFoundException();
     }
+
+    @GetMapping("/public/context")
+    public ResponseEntity<?> displayUserContext() {
+        return ResponseEntity.ok(SecurityContextHolder.getContext().getAuthentication());
+    }
 }
