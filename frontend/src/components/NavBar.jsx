@@ -4,7 +4,6 @@ import LogInModal from "./LogInModal";
 import logo from './Mask group.png'
 import cart from './shopping-cart.png'
 import './NavBar.css'
-import logo from './Mask group.png';
 import {useUser} from "../context/UserProvider";
 import {useEffect, useState} from "react";
 
@@ -49,7 +48,6 @@ function NavBar() {
                     </Link>
                     <ul className="nav-links">
                         <li><Link to="/weekly-menu">Weekly menu</Link></li>
-                        <li><Link to="/cart"><img src={cart} className="icon" alt="Cart"/></Link></li>
                         <li><Link to="/food-list">Food list</Link></li>
                         <li><Link to="/">Orders</Link></li>
                         <li><Link to="/">Favorites</Link></li>
@@ -61,6 +59,7 @@ function NavBar() {
                         }
                         <li><LogInModal/></li>
                         <li><Link onClick={() => logout()} to="/user-profile">Logout</Link></li>
+                        <li ><Link style={{backgroundColor: "white"}} to="/cart"><img src={cart} className="icon" alt="Cart"/></Link></li>
 
                     </ul>
                 </nav>

@@ -26,8 +26,6 @@ function AdminPage() {
         })
     }, [])
 
-    console.log(localStorage.getItem("token"))
-
     return (
         <div style={{color: "white"}}>
             <h2>Admin page</h2>
