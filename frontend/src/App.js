@@ -7,6 +7,7 @@ import FoodListPage from "./pages/FoodListPage";
 import SignUp from "./pages/SignUp";
 import React from "react";
 import Userprofile from "./pages/userprofile/Userprofile";
+import CartPage from "./pages/cart/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:"/user-profile",
         element: <Userprofile/>
+      },
+      {
+        path:"/cart",
+        element: <CartPage/>
       }
     ],
   },

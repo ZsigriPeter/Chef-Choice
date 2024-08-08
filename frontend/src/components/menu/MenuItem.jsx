@@ -1,4 +1,4 @@
-function MenuItem({menuItem}) {
+function MenuItem({menuItem, onOrder}) {
     return (
         <div className={"menuItemDiv"}>
             <h4 className={"menuItemDishName"}>{menuItem.dish.name}</h4>
@@ -9,7 +9,10 @@ function MenuItem({menuItem}) {
                     <p className={"menuItemAllergen"}>{allergen}</p>)
                 }
             </div>
-            <input className={"amountInput"} type={"number"} min={0} max={100}/>
+            <input className={"amountInput"} type={"number"} min={0} max={100}
+                   onChange={e =>
+                   {onOrder(menuItem.dish.id, e.target.value)}
+            } />
         </div>
     )
 }
