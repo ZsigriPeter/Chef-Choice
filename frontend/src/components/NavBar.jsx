@@ -4,7 +4,6 @@ import LogInModal from "./LogInModal";
 import logo from './Mask group.png'
 import cart from './shopping-cart.png'
 import './NavBar.css'
-import logo from './Mask group.png';
 import {useUser} from "../context/UserProvider";
 import {useEffect, useState} from "react";
 
