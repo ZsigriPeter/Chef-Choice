@@ -1,3 +1,8 @@
+.loginComponent{
+    margin: 0;
+    padding: 0;
+}
+
 .modal {
     display: flex;
     flex-direction: column;
@@ -8,8 +13,81 @@
     min-height: 10em;
     position: absolute;
     top: 20%;
+    left: 0;
+    right: 0;
     background-color: white;
-    border: 0.1rem solid black;
     border-radius: 2rem;
-    margin-left: calc(50% - 10em);
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 3rem 3rem black);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.closeButton{
+    border-radius: 0.7rem;
+    filter: drop-shadow(0 0.2rem 0.1rem black);
+    margin: 0.5rem;
+}
+
+.closeButton:active{
+    filter: drop-shadow(0 0rem 0rem black);
+}
+
+.input{
+    margin-bottom: 1em;
+}
+
+.modalButton1{
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+    filter: drop-shadow(0 0.2rem 0.1rem black);
+}
+
+.modalButton1:active{
+    filter: drop-shadow(0 0rem 0rem black);
+}
+
+.modalButton2{
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+    filter: drop-shadow(0 0.2rem 0.1rem black);
+}
+
+.modalButton2:active{
+    filter: drop-shadow(0 0rem 0rem black);
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(max-width: 391px){
+    .closeButton{
+        margin: 0.5rem 2rem 0.5rem 0.5rem;
+    }
+
+    .modalButton2{
+        margin: 0.5rem 2rem 0.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 419px) {
+    max-width: 76vw;
+}
+
+@media (max-width: 768px) {
+    .modal{
+        filter: drop-shadow(0 1rem 1rem black);
+    }
 }

@@ -12,37 +12,8 @@ code {
     monospace;
 }
 
-.footer-nav-bar .nav-links {
-    display: inline-flex;
-}
-
-
 .content {
     background-color: black;
-}
-
-.footer {
-    background-color: #242526;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-nav-bar {
-    max-width: 130em;
-    display: flex;
-}
-
-.contacts {
-    display: flex;
-    height: 4em;
-    margin-right: 5em;
-    padding-top: 1em;
-    width: fit-content;
-}
-
-.mail-phone {
-    padding-left: 1em;
 }
 
 .mainPageMessage {
@@ -278,5 +249,9 @@ code {
 
 .page-button:hover {
     background: #3A3B3C;
+}
+
+body.modal-open {
+    padding-right: 0 !important;
 }
 
