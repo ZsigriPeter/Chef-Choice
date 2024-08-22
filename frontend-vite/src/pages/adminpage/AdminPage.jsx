@@ -27,8 +27,6 @@ function AdminPage() {
         })
     }, [])
 
-    console.log(localStorage.getItem("token"))
-
     return (
         <div className={styles.adminPage}>
             <h2 className={styles.header}>Admin page</h2>
