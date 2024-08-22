@@ -42,7 +42,8 @@ public class AdminController {
 
     @PatchMapping("/member/{id}")
     public ResponseEntity<?> updateMember(@PathVariable Long id) {
-        return ResponseEntity.ok().build();
+        //TODO return ResponseEntity.ok().build();
+        throw new UnsupportedOperationException();
     }
 
     @DeleteMapping("/member/{id}")

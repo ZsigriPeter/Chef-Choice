@@ -1,10 +1,9 @@
 package com.codecool.backend.modell.entity.member;
 
-import com.codecool.backend.modell.dto.member.AddressDTO;
-import com.codecool.backend.modell.dto.member.MemberDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import javax.validation.constraints.Email;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -17,6 +16,7 @@ public class Member {
     @GeneratedValue
     private long id;
     private UUID publicId;
+    @Column(unique = true)
     private String username;
     private String password;
     private String email;
