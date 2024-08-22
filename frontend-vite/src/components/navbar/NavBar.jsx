@@ -2,7 +2,6 @@ import {Link, Outlet} from 'react-router-dom';
 import Footer from '../footer/Footer';
 import LogInModal from "../loginmodal/LogInModal";
 import cart from './shopping-cart.png'
-import './NavBar.css'
 
 import styles from "./NavBar.module.css";
 import {useUser} from "../../context/UserProvider";
