@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   db:
     image: 'postgres:13.1-alpine'
@@ -8,9 +6,6 @@ services:
       - POSTGRES_DB=chefchoice
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    ports:
-      - "5454:5432"
-
 
   backend:
     image: 'chefchioce-backend-image:latest'
