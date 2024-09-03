@@ -37,7 +37,7 @@ const UserProvider = ({children}) => {
     }, [user])
 
     const login = (credentials) => {
-        fetch("/api/public/login", {
+        fetch("/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

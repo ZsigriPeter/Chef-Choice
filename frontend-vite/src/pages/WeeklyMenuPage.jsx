@@ -5,7 +5,7 @@ import WeekDateTab from "../components/menu/WeekDateTab";
 import {useSearchParams} from "react-router-dom";
 
 const fetchMenuOfTheWeek = (startDate) => {
-    return fetch(`/api/public/weekly-menu?date=${startDate}`).then((res) => res.json());
+    return fetch(`/api/weekly-menu?date=${startDate}`).then((res) => res.json());
 }
 
 function getStartDateOfCurrentWeek() {
