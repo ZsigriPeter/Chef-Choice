@@ -1,8 +1,7 @@
 package com.codecool.backend.service;
 
-import com.codecool.backend.modell.dto.member.MemberAdminDTO;
+import com.codecool.backend.modell.dto.member.MemberToAdminPageDTO;
 import com.codecool.backend.modell.dto.member.MemberDTOMapper;
-import com.codecool.backend.modell.dto.member.MemberLoginDTO;
 import com.codecool.backend.modell.entity.member.MemberRole;
 import com.codecool.backend.modell.entity.member.Role;
 import com.codecool.backend.repository.AddressRepository;
@@ -44,7 +43,7 @@ public class MemberService {
         return memberRepository.findByEmail(email).get();
     }*/
 
-    public List<MemberAdminDTO> getAllMembers() {
+    public List<MemberToAdminPageDTO> getAllMembers() {
         return memberRepository.findAll().stream()
                 .map(MemberDTOMapper::toMemberAdminDTO).toList();
     }

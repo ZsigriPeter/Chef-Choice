@@ -1,10 +1,13 @@
 package com.codecool.backend.modell.entity.dish;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
-
+@Getter
 @Entity
+@Setter
 public class Dish {
 
     @Id
@@ -12,7 +15,9 @@ public class Dish {
     private long id;
 
     private String name;
+
     private String description;
+
     private double price;
 
     @ManyToMany
@@ -25,26 +30,5 @@ public class Dish {
         this.name = name;
         this.description = description;
         this.price = price;
-    }
-
-    public Set<Allergen> getAllergens() {
-        return allergens;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-
-    public double getPrice() {
-        return price;
     }
 }
