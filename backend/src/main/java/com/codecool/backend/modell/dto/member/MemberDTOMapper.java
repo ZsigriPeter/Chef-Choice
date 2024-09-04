@@ -4,14 +4,13 @@ import com.codecool.backend.modell.entity.member.Address;
 import com.codecool.backend.modell.entity.member.Member;
 import com.codecool.backend.modell.entity.member.MemberRole;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class MemberDTOMapper {
 
-    public static MemberAdminDTO toMemberAdminDTO(Member member) {
-        return new MemberAdminDTO(
+    public static MemberToAdminPageDTO toMemberAdminDTO(Member member) {
+        return new MemberToAdminPageDTO(
                 member.getId(),
                 member.getUsername(),
                 member.getEmail(),

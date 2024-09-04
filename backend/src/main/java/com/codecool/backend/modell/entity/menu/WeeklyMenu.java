@@ -1,11 +1,13 @@
 package com.codecool.backend.modell.entity.menu;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 @Entity
 public class WeeklyMenu {
 
@@ -30,27 +32,4 @@ public class WeeklyMenu {
     public WeeklyMenu() {
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public int getWeekNumber() {
-        return weekNumber;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
