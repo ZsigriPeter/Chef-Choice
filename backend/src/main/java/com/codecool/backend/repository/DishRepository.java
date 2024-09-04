@@ -11,4 +11,6 @@ import java.util.Optional;
 public interface DishRepository extends JpaRepository<Dish, Long> {
     List<Dish> findAll();
     Optional<Dish> findById(Long id);
+
+    Optional<Dish> findByName(String name);
 }

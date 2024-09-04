@@ -4,7 +4,7 @@ import MemberForm from "./MemberForm";
 import {useUser} from "../../context/UserProvider";
 
 const getAllMembers = () => {
-    return fetch("api/admin/member", {
+    return fetch("api/admin/member/all", {
         method: "GET",
         headers:
             {
@@ -76,11 +76,6 @@ const MemberEditor = () => {
     const [idToUpdate, setIdToUpdate] = useState(null);
     const [loading, setLoading] = useState(true);
     const {user} = useUser();
-
-    // console.log("User: " + Object.keys(user));
-    // console.log("Username: " + user.username);
-    // console.log("Roles: " + user.roles.map(role => role.role));
-    // console.log("Token: " + localStorage.getItem("token"));
 
 
     useEffect(() => {

@@ -12,7 +12,7 @@ async function fetchMenuItemById(Id) {
     return res.json();
 }
 
-function CartItem({menuItemId, menuItemAmountParam}) {
+function CartItem({menuItemId, menuItemAmountParam, onChangeOrder}) {
     const [menuItem, setMenuItem] = useState("");
     const [menuItemAmount, setMenuItemAmount] = useState(menuItemAmountParam);
 
@@ -31,6 +31,10 @@ function CartItem({menuItemId, menuItemAmountParam}) {
         setMenuItemAmount(menuItemAmountParam);
     }, [menuItemAmountParam]);
 
+    const handleOnChange = (e) => {
+        onChangeOrder(menuItem.id, e.target.value);
+    }
+
     return (
         <>
             {(menuItemAmount > 0 && menuItem) &&
@@ -38,7 +42,9 @@ function CartItem({menuItemId, menuItemAmountParam}) {
                     <label className={styles.ItemName}
                            htmlFor={menuItem}>{menuItem.dish.name} ({menuItem.dateOfDelivery})</label>
                     <input className={styles.ItemAmount} value={menuItemAmount} type="number"
-                           onChange={e => setMenuItemAmount(e.target.value)}/>
+                           onChange={e => {
+                               handleOnChange(e)
+                           }}/>
                 </div>}
         </>
     );

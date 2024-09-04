@@ -7,11 +7,12 @@ import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
-
+@RequestMapping("/api")
 @RestController
 public class MenuController {
 
@@ -24,17 +25,17 @@ public class MenuController {
         this.menuService = menuService;
     }
 
-    @GetMapping("/api/public/menu-item")
+    @GetMapping("/menu-item")
     public MenuItemDTO getMenuItemById(@RequestParam long id) {
         return menuService.getMenuItemById(id);
     }
 
-    @GetMapping("/api/public/weekly-menu")
+    @GetMapping("/weekly-menu")
     public WeeklyMenuDTO getMenu(@RequestParam LocalDate date) {
         return menuService.getMenu(date);
     }
 
-    @GetMapping("/api/public/main-page")
+    @GetMapping("/main-page")
     public MainPageDTO getMainPageContent() {
         return new MainPageDTO("Welcome to Chef Choice", "picture URL");
     }

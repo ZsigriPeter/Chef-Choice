@@ -8,19 +8,6 @@ import {useUser} from "../../context/UserProvider";
 import {useEffect, useState} from "react";
 import logo from "./Mask group.png";
 
-const fetchUserContext = (token) => {
-    return fetch("api/public/context",
-        {
-            method: "GET",
-            headers:
-                {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem("token")}`
-                }
-        }
-    ).then(res => res.json());
-}
-
 function NavBar() {
     const {user, logout} = useUser();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,19 +15,16 @@ function NavBar() {
     const [hasAdminRole, setHasAdminRole] = useState(false)
 
     useEffect(() => {
-        fetchUserContext().then(resp => {
-            const roles = resp.authorities.map(authority => authority.authority);
-            if (roles.includes("ROLE_ADMIN")) setHasAdminRole(true);
-            else setHasAdminRole(false);
-        })
+        if (user) {
+            if (user.roles.some(role => role.role === "ROLE_ADMIN")) {
+                setHasAdminRole(true)
+                console.log("HasADmin: " + hasAdminRole)
+            } else {
+                setHasAdminRole(false)
+                console.log("HasADmin: " + hasAdminRole)
+            }
+        }
     }, [user])
-
-    if (user) {
-        console.log("Navbar user: " + user.username)
-        console.log("Roles: " + user.roles.map(role => role.role));
-    }
-
-    console.log("HasADmin: " + hasAdminRole)
 
     const changeIsLoggedIn = () => {
         setIsLoggedIn(true);
@@ -63,7 +47,6 @@ function NavBar() {
                         <li><Link to="/food-list" onClick={toggleMenu}>Food list</Link></li>
                         {user
                             ? <>
-                                {/*<li><Link to="/" onClick={toggleMenu}>Favorites</Link></li>*/}
                                 <li><Link to="/user-profile" onClick={toggleMenu}>User profile</Link></li>
                                 {hasAdminRole
                                     ? <li>< Link to={"/admin"} onClick={toggleMenu}>Admin</Link></li>

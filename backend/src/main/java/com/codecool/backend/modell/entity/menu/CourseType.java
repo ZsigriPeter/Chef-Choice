@@ -3,7 +3,9 @@ package com.codecool.backend.modell.entity.menu;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class CourseType {
     @Id
@@ -12,11 +14,10 @@ public class CourseType {
 
     private String name;
 
-    public long getId() {
-        return id;
+    public CourseType() {
     }
 
-    public String getName() {
-        return name;
+    public CourseType(String name) {
+        this.name = name;
     }
 }

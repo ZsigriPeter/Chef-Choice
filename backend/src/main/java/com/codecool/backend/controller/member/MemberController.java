@@ -54,7 +54,7 @@ public class MemberController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @PostMapping("/public/signup")
+    @PostMapping("/signup")
     public void signup(@RequestBody CreateNewMemberRequest createNewMemberRequest) {
         Address address = new Address(
                 createNewMemberRequest.getStreetAndHouseNumber(),
@@ -75,8 +75,8 @@ public class MemberController {
         memberService.signUp(member);
     }
 
-    @PostMapping("/public/login")
-    public ResponseEntity<?> login(@RequestBody MemberLoginRequest memberLoginRequest) {
+    @PostMapping("/login")
+    public JwtResponse login(@RequestBody MemberLoginRequest memberLoginRequest) {
 
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(memberLoginRequest.getUsername(), memberLoginRequest.getPassword()));
@@ -88,7 +88,7 @@ public class MemberController {
         Set<String> roles = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toSet());
 
-        return ResponseEntity.ok(new JwtResponse(token, userDetails.getUsername(), roles));
+        return new JwtResponse(token, userDetails.getUsername(), roles);
     }
 
     @GetMapping("/user/me")
@@ -108,10 +108,5 @@ public class MemberController {
                     DTOMapper.toMemberRoleDTOSet(member1.getRoles())
             );
         } else throw new MemberNotFoundException();
-    }
-
-    @GetMapping("/public/context")
-    public ResponseEntity<?> displayUserContext() {
-        return ResponseEntity.ok(SecurityContextHolder.getContext().getAuthentication());
     }
 }
