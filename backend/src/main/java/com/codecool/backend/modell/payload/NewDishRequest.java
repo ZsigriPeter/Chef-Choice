@@ -6,6 +6,6 @@ import lombok.Data;
 public class NewDishRequest {
     private String name;
     private String description;
-    private double price;
-    private String[] allergens = new String[0];
+    private String price;
+    private Object[] allergens = new Object[0];
 }

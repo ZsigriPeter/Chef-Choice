@@ -2,6 +2,8 @@ package com.codecool.backend.controller;
 
 import com.codecool.backend.modell.dto.food.DishDTO;
 import com.codecool.backend.modell.dto.member.MemberToAdminPageDTO;
+import com.codecool.backend.modell.payload.NewDishRequest;
+import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,11 +15,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
-    private MemberService memberService;
+    private final MemberService memberService;
+    private final DishService dishService;
 
     @Autowired
-    public AdminController(MemberService memberService) {
+    public AdminController(MemberService memberService, DishService dishService) {
         this.memberService = memberService;
+        this.dishService = dishService;
     }
 
     //Member
@@ -49,7 +53,7 @@ public class AdminController {
 
     //Dish
     @PostMapping("/dish")
-    public void addNewDish(@RequestBody DishDTO dish) {
-
+    public void addNewDish(@RequestBody NewDishRequest dish) {
+        dishService.addNewDish(dish);
     }
 }

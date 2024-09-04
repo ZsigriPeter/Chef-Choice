@@ -2,7 +2,9 @@ package com.codecool.backend.modell.entity.menu;
 
 import com.codecool.backend.modell.entity.dish.Dish;
 import jakarta.persistence.*;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class MenuItem {
 
@@ -19,28 +21,14 @@ public class MenuItem {
     @JoinColumn(name = "weekly_menu_id")
     private WeeklyMenu weeklyMenu;
 
-    public Long getId() {
-        return id;
+    public MenuItem(CourseType course, String code, Dish dish, int dayIndex, WeeklyMenu weeklyMenu) {
+        this.course = course;
+        this.code = code;
+        this.dish = dish;
+        this.dayIndex = dayIndex;
+        this.weeklyMenu = weeklyMenu;
     }
 
-    public CourseType getCourse() {
-        return course;
+    public MenuItem() {
     }
-
-    public String getCode() {
-        return code;
-    }
-
-    public Dish getDish() {
-        return dish;
-    }
-
-    public int getDayIndex() {
-        return dayIndex;
-    }
-
-    public WeeklyMenu getWeeklyMenu() {
-        return weeklyMenu;
-    }
-
 }

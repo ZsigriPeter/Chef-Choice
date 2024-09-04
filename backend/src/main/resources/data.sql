@@ -3,25 +3,25 @@ VALUES (1, 'SOUP'),
        (2, 'MAIN'),
        (3, 'DESSERT');
 
-INSERT INTO public.allergen (id, name)
-VALUES (1, 'Gluten'),
-       (2, 'Crustaceans'),
-       (3, 'Eggs'),
-       (4, 'Fish'),
-       (5, 'Peanuts'),
-       (6, 'Soy'),
-       (7, 'Milk'),
-       (8, 'Nuts'),
-       (9, 'Celery'),
-       (10, 'Mustard'),
-       (11, 'Sesame seeds'),
-       (12, 'Sulphites'),
-       (13, 'Lupin'),
-       (14, 'Molluscs'),
-       (15, 'Dairy'),
-       (16, 'Garlic'),
-       (17, 'Shellfish'),
-       (18, 'Coconut');
+INSERT INTO public.allergen (id, name, number)
+VALUES (1, 'Gluten',1),
+       (2, 'Crustaceans',2),
+       (3, 'Eggs',3),
+       (4, 'Fish',4),
+       (5, 'Peanuts',5),
+       (6, 'Soy',6),
+       (7, 'Milk',7),
+       (8, 'Nuts',8),
+       (9, 'Celery',9),
+       (10, 'Mustard',10),
+       (11, 'Sesame seeds',11),
+       (12, 'Sulphites',12),
+       (13, 'Lupin',13),
+       (14, 'Molluscs',14),
+       (15, 'Dairy',15),
+       (16, 'Garlic',16),
+       (17, 'Shellfish',17),
+       (18, 'Coconut',18);
 
 
 

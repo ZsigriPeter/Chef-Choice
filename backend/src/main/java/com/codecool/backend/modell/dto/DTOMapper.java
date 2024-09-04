@@ -63,7 +63,7 @@ public class DTOMapper {
     }
 
     public static AllergenDTO toAllergenDTO(Allergen allergen) {
-        return new AllergenDTO(allergen.getId(), allergen.getName());
+        return new AllergenDTO(allergen.getName(), allergen.getNumber());
     }
 
     public static Set<MemberRoleDTO> toMemberRoleDTOSet(Set<MemberRole> memberRoles) {

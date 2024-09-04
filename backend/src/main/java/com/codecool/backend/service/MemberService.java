@@ -35,14 +35,6 @@ public class MemberService {
         }
     }
 
-/*    public Member tryToLogIn(MemberLoginDTO memberLoginDTO) {
-        String username = memberLoginDTO.username();
-        if (memberRepository.findByEmail(email).isEmpty()) {
-            return null;
-        }
-        return memberRepository.findByEmail(email).get();
-    }*/
-
     public List<MemberToAdminPageDTO> getAllMembers() {
         return memberRepository.findAll().stream()
                 .map(MemberDTOMapper::toMemberAdminDTO).toList();
