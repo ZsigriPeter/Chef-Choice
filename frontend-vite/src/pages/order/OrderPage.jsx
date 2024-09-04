@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {useUser} from "../../context/UserProvider";
 
 async function fetchMenuItemById(Id) {
-    const res = await fetch(`/api/public/menu-item?id=${Id}`);
+    const res = await fetch(`/api/menu-item?id=${Id}`);
     return res.json();
 }
 

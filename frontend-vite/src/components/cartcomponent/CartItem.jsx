@@ -3,12 +3,12 @@ import {useEffect, useState} from "react";
 
 
 async function fetchFoodItemById(Id) {
-    const res = await fetch(`/api/public/food?id=${Id}`);
+    const res = await fetch(`/api/food?id=${Id}`);
     return res.json();
 }
 
 async function fetchMenuItemById(Id) {
-    const res = await fetch(`/api/public/menu-item?id=${Id}`);
+    const res = await fetch(`/api/menu-item?id=${Id}`);
     return res.json();
 }
 
