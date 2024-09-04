@@ -1,0 +1,43 @@
+
+.BackGroundDiv {
+    background-image: url('../../imgs/background.png');
+}
+
+.OrderDiv {
+    background-color: white;
+    opacity: 87%;
+    padding-left: 2em;
+    padding-top: 2em;
+    border-radius: 1em;
+    border: 0.3em solid black;
+    min-height: 78vh;
+}
+
+button:hover {
+    cursor: pointer;
+    background: black;
+}
+
+.OrderTable {
+    width: calc(100% - 2em);
+    border-collapse: collapse;
+}
+
+.TableCell {
+    border: black solid 0.1em;
+}
+
+.FinalPrize {
+    margin-top: 1em;
+    margin-left: auto;
+    width: 10em;
+    border: black solid 0.3em;
+    padding-left: 1.5em;
+    border-radius: 1.5em;
+    margin-right: 2em;
+    padding-top: 1em;
+}
+
+.AddressInput {
+    width: 20em;
+}
