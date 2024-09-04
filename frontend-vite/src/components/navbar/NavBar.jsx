@@ -21,6 +21,7 @@ function NavBar() {
                 console.log("HasADmin: " + hasAdminRole)
             } else {
                 setHasAdminRole(false)
+                console.log("HasADmin: " + hasAdminRole)
             }
         }
     }, [user])
