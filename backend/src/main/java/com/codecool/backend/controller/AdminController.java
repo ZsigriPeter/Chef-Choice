@@ -15,24 +15,13 @@ import java.util.Set;
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
-    private MemberService memberService;
-
-    private List<MemberAdminDTO> members = List.of(
-            new MemberAdminDTO(1L, "member1", "member1@email.com"
-                    , "John", "Doe", "+36 30 1234567"
-                    , new AddressDTO("Main Street 10", "Budapest", "Hungary", 1051)
-                    , Set.of("ROLE_USER", "ROLE_ADMIN")),
-            new MemberAdminDTO(2L, "member2", "member2@email.com"
-                    , "Mike", "Smith", "+36 70 1234567"
-                    , new AddressDTO("Main Street 12", "Budapest", "Hungary", 1051)
-                    , Set.of("ROLE_USER")
-            )
-    );
+    private final MemberService memberService;
 
     @Autowired
     public AdminController(MemberService memberService) {
         this.memberService = memberService;
     }
+
 
     @GetMapping("/member")
     public List<MemberAdminDTO> getAllMembers() {
@@ -41,8 +30,8 @@ public class AdminController {
     }
 
     @PatchMapping("/member/{id}")
-    public ResponseEntity<?> updateMember(@PathVariable Long id) {
-        //TODO return ResponseEntity.ok().build();
+    public void updateMember(@PathVariable Long id) {
+        //TODO
         throw new UnsupportedOperationException();
     }
 
