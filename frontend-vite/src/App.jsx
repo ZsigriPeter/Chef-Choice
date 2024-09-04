@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp";
 import Userprofile from "./pages/userprofile/Userprofile";
 import CartPage from "./pages/cart/CartPage";
 import AdminPage from "./pages/adminpage/AdminPage";
+import OrderPage from "./pages/order/OrderPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
                 path: "/admin",
                 element: <AdminPage/>,
             },
+            {
+                path:"/order",
+                element: <OrderPage/>
+            }
         ],
     },
 ]);
