@@ -1,12 +1,10 @@
 package com.codecool.backend.controller;
 
-import com.codecool.backend.modell.dto.food.DishDTO;
 import com.codecool.backend.modell.dto.member.MemberToAdminPageDTO;
 import com.codecool.backend.modell.payload.NewDishRequest;
 import com.codecool.backend.service.DishService;
 import com.codecool.backend.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
