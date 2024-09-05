@@ -45,10 +45,10 @@ class MenuServiceTest {
         menuItem = new MenuItem();
         menuItemDTO0 = new MenuItemDTO(0L, new CourseTypeDTO(0L, ""), "A1"
                 , new DishDTO(0L, "", "", 19.0
-                , Set.of(new AllergenDTO(0L, ""))), 1, menuStartDate);
+                , Set.of(new AllergenDTO("",0))), 1, menuStartDate);
         menuItemDTO1 = new MenuItemDTO(1L, new CourseTypeDTO(0L, ""), "A1"
                 , new DishDTO(0L, "", "", 19.0
-                , Set.of(new AllergenDTO(0L, ""))), 1, menuStartDate);
+                , Set.of(new AllergenDTO("", 1))), 1, menuStartDate);
         weeklyMenu = new WeeklyMenu();
         weeklyMenuDTO = new WeeklyMenuDTO(0L, 33, menuStartDate, menuStartDate, List.of(menuItemDTO0, menuItemDTO1));
     }
