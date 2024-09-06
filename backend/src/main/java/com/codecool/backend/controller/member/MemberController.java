@@ -1,9 +1,7 @@
 package com.codecool.backend.controller.member;
 
 import com.codecool.backend.modell.dto.DTOMapper;
-import com.codecool.backend.modell.dto.member.AddressDTO;
 import com.codecool.backend.modell.dto.member.MemberDTO;
-import com.codecool.backend.modell.dto.member.MemberLoginDTO;
 import com.codecool.backend.modell.entity.member.Address;
 import com.codecool.backend.modell.entity.member.Member;
 import com.codecool.backend.modell.entity.member.Role;
@@ -15,7 +13,6 @@ import com.codecool.backend.repository.RoleRepository;
 import com.codecool.backend.security.jwt.JwtUtils;
 import com.codecool.backend.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -26,7 +23,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -60,7 +56,7 @@ public class MemberController {
                 createNewMemberRequest.getStreetAndHouseNumber(),
                 createNewMemberRequest.getSettlement(),
                 createNewMemberRequest.getCountry(),
-                createNewMemberRequest.getZIP()
+                createNewMemberRequest.getZipCode()
         );
         Member member = new Member(
                 createNewMemberRequest.getUsername(),

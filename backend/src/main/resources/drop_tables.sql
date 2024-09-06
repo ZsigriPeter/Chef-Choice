@@ -12,3 +12,8 @@ DROP TABLE IF EXISTS public.weekly_menu_rows CASCADE;
 DROP TABLE IF EXISTS public.weekly_menu_menu_rows CASCADE;
 DROP TABLE IF EXISTS public.member_role CASCADE;
 DROP TABLE IF EXISTS public.members_roles CASCADE;
+DROP TABLE IF EXISTS public.order_item CASCADE;
+DROP TABLE IF EXISTS public.order_menu_items CASCADE;
+DROP TABLE IF EXISTS public.purchase CASCADE;
+DROP TABLE IF EXISTS public.purchase_item CASCADE;
+DROP TABLE IF EXISTS public.purchase_menu_items CASCADE;

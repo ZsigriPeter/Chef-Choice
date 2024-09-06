@@ -17,8 +17,8 @@ import java.util.Optional;
 @Service
 public class MenuService {
 
-    private WeeklyMenuRepository weeklyMenuRepository;
-    private MenuItemRepository menuItemRepository;
+    private final WeeklyMenuRepository weeklyMenuRepository;
+    private final MenuItemRepository menuItemRepository;
 
     public MenuService(WeeklyMenuRepository weeklyMenuRepository, MenuItemRepository menuItemRepository) {
         this.weeklyMenuRepository = weeklyMenuRepository;
@@ -39,6 +39,15 @@ public class MenuService {
         Optional<MenuItem> foundMenuItem = menuItemRepository.findById(id);
         if (foundMenuItem.isPresent()) {
             return DTOMapper.toMenuItemDTO(foundMenuItem.get());
+        } else {
+            throw new NoSuchElementException();
+        }
+    }
+
+    public MenuItem getMenuItemByIdMenuItem(long id) {
+        Optional<MenuItem> foundMenuItem = menuItemRepository.findById(id);
+        if (foundMenuItem.isPresent()) {
+            return (foundMenuItem.get());
         } else {
             throw new NoSuchElementException();
         }

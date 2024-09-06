@@ -62,4 +62,8 @@ public class MemberService {
         member.getRoles().remove(role);
         memberRepository.save(member);
     }
+
+    public Member getMemberByUsername(String username) {
+        return memberRepository.findUserByUsername(username).orElseThrow();
+    }
 }

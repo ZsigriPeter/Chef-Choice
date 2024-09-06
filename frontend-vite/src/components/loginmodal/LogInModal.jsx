@@ -54,7 +54,7 @@ function LogInModal({onLogin, onToggle}) {
                                 autoFocus
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                controlId="exampleForm.ControlInput1"
+                                controlid="exampleForm.ControlInput1"
                             /><br/>
                             <Form.Label>Password:</Form.Label><br/>
                             <Form.Control
@@ -64,7 +64,7 @@ function LogInModal({onLogin, onToggle}) {
                                 autoFocus
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                controlId="exampleForm.ControlInput2"
+                                controlid="exampleForm.ControlInput2"
                             /><br/>
 
                         </Form.Group>
