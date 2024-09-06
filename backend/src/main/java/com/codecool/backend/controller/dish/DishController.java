@@ -1,4 +1,4 @@
-package com.codecool.backend.controller;
+package com.codecool.backend.controller.dish;
 
 import com.codecool.backend.modell.dto.food.DishDTO;
 import com.codecool.backend.service.DishService;

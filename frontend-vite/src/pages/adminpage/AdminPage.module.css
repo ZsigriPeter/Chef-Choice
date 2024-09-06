@@ -15,7 +15,7 @@
     border-radius: 1em;
     display: flex;
     justify-content: space-between;
-margin-top: 2em;
+    margin-top: 2em;
     margin-bottom: 2em;
 }
 
@@ -26,14 +26,14 @@ margin-top: 2em;
     padding: 0.5em 2em 0.5em 2em;
 }
 
-.editorMenu li:hover{
+.editorMenu li:hover {
     background: #3A3B3C;
     filter: drop-shadow(0 0.2rem 0.2rem black);
     border-radius: 0.5em;
     color: white;
 }
 
-.editorMenu li:active{
+.editorMenu li:active {
     background: #3A3B3C;
     filter: drop-shadow(0 0rem 0rem black);
     border-radius: 0.5em;

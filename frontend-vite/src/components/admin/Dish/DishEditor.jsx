@@ -1,8 +1,10 @@
 import DishForm from "./DishForm.jsx";
+import NewAllergenForm from "../NewAllergenForm.jsx";
 
 function DishEditor() {
     return <>
-<DishForm></DishForm>
+        <DishForm/>
+        <NewAllergenForm/>
     </>
 }
 
