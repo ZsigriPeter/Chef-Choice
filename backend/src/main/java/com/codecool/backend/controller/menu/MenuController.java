@@ -1,4 +1,4 @@
-package com.codecool.backend.controller;
+package com.codecool.backend.controller.menu;
 
 import com.codecool.backend.modell.dto.MainPageDTO;
 import com.codecool.backend.modell.dto.food.MenuItemDTO;

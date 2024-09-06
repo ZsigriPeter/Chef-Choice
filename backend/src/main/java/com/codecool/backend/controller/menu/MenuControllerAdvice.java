@@ -1,4 +1,4 @@
-package com.codecool.backend.controller;
+package com.codecool.backend.controller.menu;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

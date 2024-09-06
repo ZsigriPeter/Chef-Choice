@@ -1,18 +1,18 @@
-import {useState} from "react";
-import dish from "../menu/Dish.jsx";
+import {useEffect, useState} from "react";
+import styles from "./DishForm.module.css"
 
 async function addNewDish(dish) {
     const token = localStorage.getItem("token");
-    console.log(dish)
     await fetch("/api/admin/dish", {
         method: "POST",
         headers: {
             'Authorization': `Bearer ${token}`,
-            "Content-Type":"application/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(dish)
     })
 }
+
 
 function DishForm() {
     const [name, setName] = useState("");
@@ -25,6 +25,11 @@ function DishForm() {
         let newAllergen = {name: '', number: ''}
         setAllergens([...allergens, newAllergen])
     }
+    const removeAllergenField = (index) => {
+        let data = [...allergens];
+        data.splice(index, 1)
+        setAllergens(data)
+    }
 
     const handleAllergensChange = (index, e) => {
         let data = [...allergens];
@@ -32,13 +37,13 @@ function DishForm() {
         setAllergens(data);
     }
 
-    const onSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const dish = {name, description, price, allergens}
         addNewDish(dish)
     }
     return <>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label>Dish name:<br/>
                     <input
@@ -86,17 +91,20 @@ function DishForm() {
                                         id="number"
                                     /><br/>
                                 </label>
-                                <button>-</button>
+                                <button onClick={() => removeAllergenField(index)}
+                                        className={styles.deleteAllergenButton}>-
+                                </button>
                             </div>
                         </>
                     )
                 })
                 }
-                <button type={"button"} onClick={addAllergenField}>Add allergen</button>
+                <button type={"button"} onClick={addAllergenField} className={styles.addAllergenButton}>Add allergen
+                </button>
             </div>
             <div>
 
-                <input type={"submit"} value={"Add dish"}/>
+                <input type={"submit"} value={"Add dish"} className={styles.submitInput}/>
             </div>
         </form>
     </>
