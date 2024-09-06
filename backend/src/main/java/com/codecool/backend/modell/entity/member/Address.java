@@ -15,13 +15,13 @@ public class Address {
     private String streetAndHouseNumber;
     private String settlement;
     private String country;
-    private int ZIP;
+    private int zipCode;
 
-    public Address(String streetAndHouseNumber, String settlement, String country, int ZIP) {
+    public Address(String streetAndHouseNumber, String settlement, String country, int zipCode) {
         this.streetAndHouseNumber = streetAndHouseNumber;
         this.settlement = settlement;
         this.country = country;
-        this.ZIP = ZIP;
+        this.zipCode = zipCode;
     }
 
     public Address() {}

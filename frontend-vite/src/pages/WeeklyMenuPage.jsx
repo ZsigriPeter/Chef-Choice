@@ -31,7 +31,6 @@ function WeeklyMenuPage() {
         const updatedOrders = orders.filter(order => order.menuItemId !== menuItemId);
         updatedOrders.push(food);
         setOrders([...updatedOrders]);
-        console.log(orders);
     }
 
     useEffect(() => {

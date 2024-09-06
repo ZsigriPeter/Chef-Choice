@@ -17,13 +17,9 @@ function CartItem({menuItemId, menuItemAmountParam, onChangeOrder}) {
     const [menuItemAmount, setMenuItemAmount] = useState(menuItemAmountParam);
 
     useEffect(() => {
-        console.log(menuItemId);
-        console.log(menuItemAmountParam);
         fetchMenuItemById(menuItemId)
             .then((result) => {
                 setMenuItem(result);
-                console.log(result);
-                console.log(menuItemAmount);
             })
     }, [menuItemId]);
 

@@ -27,7 +27,7 @@ public class MemberDTOMapper {
         return new AddressDTO(address.getStreetAndHouseNumber(),
                 address.getSettlement(),
                 address.getCountry(),
-                address.getZIP());
+                address.getZipCode());
     }
 
     public static Set<RoleDTO> toRoleDTOSet(Set<MemberRole> roles) {

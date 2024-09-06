@@ -54,6 +54,14 @@ public class MenuService {
         }
     }
 
+    public MenuItem getMenuItemByIdMenuItem(long id) {
+        Optional<MenuItem> foundMenuItem = menuItemRepository.findById(id);
+        if (foundMenuItem.isPresent()) {
+            return (foundMenuItem.get());
+        } else {
+            throw new NoSuchElementException();
+        }
+      
     public void addNewMenuItem(NewMenuItemRequest menuItem) {
         CourseType courseType = courseTypeRepository.findByName(menuItem.getDishType()).orElseThrow();
         Dish dish = dishRepository.findByName(menuItem.getDishName()).orElseThrow();

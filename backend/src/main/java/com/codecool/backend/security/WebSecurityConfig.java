@@ -72,6 +72,7 @@ public class WebSecurityConfig {
                                 .requestMatchers("/api/food-list").permitAll()
                                 .requestMatchers("/api/food").permitAll()
                                 .requestMatchers("/api/user/**").hasRole("USER")
+                                .requestMatchers("/api/order").hasRole("USER")
                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
                                 .requestMatchers("/api/error").permitAll()
                                 .anyRequest().authenticated()

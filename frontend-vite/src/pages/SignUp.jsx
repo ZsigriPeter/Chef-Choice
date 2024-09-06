@@ -2,7 +2,6 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 async function postNewUser(userData) {
-    console.log(userData)
     const res = await fetch("/api/signup", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -23,7 +22,7 @@ function SignUp() {
     const [streetAndHouseNumber, setStreetAndHouseNumber] = useState("");
     const [settlement, setSettlement] = useState("");
     const [country, setCountry] = useState("");
-    const [ZIP, setZIP] = useState("");
+    const [zipCode, setZipCode] = useState(0);
     const [username, setUsername] = useState("");
     const [password1, setPassword1] = useState("");
     const [password2, setPassword2] = useState("");
@@ -44,7 +43,7 @@ function SignUp() {
                 streetAndHouseNumber,
                 settlement,
                 country,
-                ZIP
+                zipCode
             }
             postNewUser(userData).then(
                 navigate('/')
@@ -92,8 +91,8 @@ function SignUp() {
                     <input required={true} name="country" id="country" type="text" placeholder="Country" value={country}
                            onChange={e => setCountry(e.target.value)}/><br/>
                     <label htmlFor="ZIP">ZIP</label><br/>
-                    <input required={true} name="ZIP" id="ZIP" type="number" placeholder="ZIP" value={ZIP}
-                           onChange={e => setZIP(e.target.value)}/><br/>
+                    <input required={true} name="ZIP" id="ZIP" type="number" placeholder="ZIP" value={zipCode}
+                           onChange={e => setZipCode(e.target.value)}/><br/>
                 </div>
                 <br/>
                 <button type="submit">Sign Up</button>

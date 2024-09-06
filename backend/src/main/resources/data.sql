@@ -128,7 +128,7 @@ VALUES (100, 'S1', 0, 1, 10, 1),
        (129, 'D2', 4, 3, 60, 1)
        ;
 
-INSERT INTO public.address (id, zip, country, settlement, street_and_house_number)
+INSERT INTO public.address (id, zip_code, country, settlement, street_and_house_number)
 VALUES
     (1, '10001', 'USA', 'New York', '123 Main St Apt 4B'),
     (2, '90001', 'USA', 'Los Angeles', '456 Elm St Unit 5C'),

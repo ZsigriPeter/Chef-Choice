@@ -2,7 +2,6 @@ package com.codecool.backend.modell.entity.order;
 
 import com.codecool.backend.modell.entity.member.Address;
 import com.codecool.backend.modell.entity.member.Member;
-import com.codecool.backend.modell.entity.menu.MenuItem;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +12,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-public class Order {
+public class Purchase {
 
     @Id
     @GeneratedValue
@@ -24,7 +23,15 @@ public class Order {
     @OneToOne
     private Address address;
     @OneToMany
-    private List<MenuItem> menuItems;
+    private List<PurchaseItem> menuItems;
 
+    public Purchase(Member member, Address address, List<PurchaseItem> purchaseItems) {
+        this.member = member;
+        this.address = address;
+        this.menuItems = purchaseItems;
+        publicId = UUID.randomUUID();
+    }
 
+    public Purchase() {
+    }
 }
