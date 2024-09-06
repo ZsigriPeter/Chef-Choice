@@ -61,12 +61,13 @@ public class MenuService {
         } else {
             throw new NoSuchElementException();
         }
-      
+    }
+
     public void addNewMenuItem(NewMenuItemRequest menuItem) {
         CourseType courseType = courseTypeRepository.findByName(menuItem.getDishType()).orElseThrow();
         Dish dish = dishRepository.findByName(menuItem.getDishName()).orElseThrow();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate date = LocalDate.parse(menuItem.getStartDate(),dtf);
+        LocalDate date = LocalDate.parse(menuItem.getStartDate(), dtf);
         WeeklyMenu weeklyMenu = weeklyMenuRepository.findByStartDate(date).orElseThrow();
         int dayIndex = menuItem.getDayNumber() - 1;
         MenuItem newMenuItem = new MenuItem(courseType, menuItem.getDishCode(), dish, dayIndex, weeklyMenu);
