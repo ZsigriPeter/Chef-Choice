@@ -65,7 +65,7 @@ public class WebSecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/api/main-page").permitAll()
-                                .requestMatchers("/api/sign-up").permitAll()
+                                .requestMatchers("/api/signup").permitAll()
                                 .requestMatchers("/api/login").permitAll()
                                 .requestMatchers("/api/weekly-menu").permitAll()
                                 .requestMatchers("/api/menu-item").permitAll()
