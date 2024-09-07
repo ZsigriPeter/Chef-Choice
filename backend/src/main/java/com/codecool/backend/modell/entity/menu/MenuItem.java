@@ -21,14 +21,14 @@ public class MenuItem {
     @JoinColumn(name = "weekly_menu_id")
     private WeeklyMenu weeklyMenu;
 
+    public MenuItem() {
+    }
+
     public MenuItem(CourseType course, String code, Dish dish, int dayIndex, WeeklyMenu weeklyMenu) {
         this.course = course;
         this.code = code;
         this.dish = dish;
         this.dayIndex = dayIndex;
         this.weeklyMenu = weeklyMenu;
-    }
-
-    public MenuItem() {
     }
 }

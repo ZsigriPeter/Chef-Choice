@@ -79,7 +79,7 @@ public class DTOMapper {
                 address.getStreetAndHouseNumber(),
                 address.getSettlement(),
                 address.getCountry(),
-                address.getZIP()
+                address.getZipCode()
         );
     }
 }

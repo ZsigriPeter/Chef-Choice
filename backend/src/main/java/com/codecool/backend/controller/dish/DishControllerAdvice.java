@@ -1,5 +1,6 @@
-package com.codecool.backend.controller;
+package com.codecool.backend.controller.dish;
 
+import com.codecool.backend.controller.NoSuchAllergenException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

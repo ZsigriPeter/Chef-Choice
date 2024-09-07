@@ -91,9 +91,9 @@ VALUES (1, 'Bruschetta Pomodoro', 'Grilled bread topped with fresh tomatoes, bas
 
 
 INSERT INTO public.weekly_menu (id, start_date, end_date, week_number, year)
-VALUES (1, '2024-08-19', '2024-08-23', 34, 2024),
-       (2, '2024-08-26', '2024-08-30', 35, 2024),
-       (3, '2024-09-02', '2024-09-06', 36, 2024);
+VALUES (1, '2024-09-02', '2024-09-06', 36, 2024),
+       (2, '2024-09-09', '2024-09-13', 37, 2024),
+       (3, '2024-09-16', '2024-09-20', 38, 2024);
 
 INSERT INTO public.menu_item (id, code, day_index, course_id, dish_id, weekly_menu_id)
 VALUES (100, 'S1', 0, 1, 10, 1),
@@ -128,7 +128,7 @@ VALUES (100, 'S1', 0, 1, 10, 1),
        (129, 'D2', 4, 3, 60, 1)
        ;
 
-INSERT INTO public.address (id, zip, country, settlement, street_and_house_number)
+INSERT INTO public.address (id, zip_code, country, settlement, street_and_house_number)
 VALUES
     (1, '10001', 'USA', 'New York', '123 Main St Apt 4B'),
     (2, '90001', 'USA', 'Los Angeles', '456 Elm St Unit 5C'),

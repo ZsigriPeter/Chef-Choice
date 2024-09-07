@@ -1,6 +1,6 @@
 package com.codecool.backend.service;
 
-import com.codecool.backend.controller.DishAlreadyInDbException;
+import com.codecool.backend.controller.dish.DishAlreadyInDbException;
 import com.codecool.backend.modell.dto.DTOMapper;
 import com.codecool.backend.modell.dto.food.AllergenDTO;
 import com.codecool.backend.modell.dto.food.DishDTO;

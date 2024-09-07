@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import MemberTable from "./MemberTable";
-import MemberForm from "./MemberForm";
-import {useUser} from "../../context/UserProvider";
+import MemberTable from "./MemberTable.jsx";
+import MemberForm from "./MemberForm.jsx";
+import {useUser} from "../../../context/UserProvider.jsx";
 
 const getAllMembers = () => {
     return fetch("api/admin/member/all", {

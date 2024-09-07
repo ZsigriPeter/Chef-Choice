@@ -10,18 +10,13 @@ function Cart() {
 
     useEffect(() => {
         setCartItems(JSON.parse(localStorage.getItem("orders")));
-        console.log(cartItems);
     }, []);
 
     function changeOrderAmount(menuItemId, menuItemAmount) {
         const updatedOrders = cartItems.filter(order => order.menuItemId !== menuItemId);
         if (menuItemAmount > 0) {
             const food = {menuItemId, menuItemAmount};
-            console.log(food);
-            console.log(cartItems);
             updatedOrders.push(food);
-            console.log(cartItems);
-            console.log(updatedOrders);
         }
         setCartItems([...updatedOrders]);
         localStorage.setItem("orders", JSON.stringify(updatedOrders));

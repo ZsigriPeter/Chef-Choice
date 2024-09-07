@@ -4,12 +4,12 @@ import {useNavigate} from "react-router-dom";
 import {useUser} from "../../context/UserProvider";
 
 async function fetchMenuItemById(Id) {
-    const res = await fetch(`/api/public/menu-item?id=${Id}`);
+    const res = await fetch(`/api/menu-item?id=${Id}`);
     return res.json();
 }
 
 const postOrder = (orderInformation) => {
-    return fetch("api/order",
+    return fetch("/api/order",
         {
             method: "POST",
             headers:
@@ -28,7 +28,7 @@ function OrderPage() {
     const [streetAndHouseNumber, setStreetAndHouseNumber] = useState("");
     const [settlement, setSettlement] = useState("");
     const [country, setCountry] = useState("");
-    const [ZIP, setZIP] = useState("");
+    const [ZIP, setZIP] = useState(0);
 
     const {user} = useUser();
 
@@ -46,11 +46,9 @@ function OrderPage() {
                 })
             );
             setOrderList(orderListData);
-            console.log(orderListData);
         }
 
         fetchOrders();
-        console.log(user)
         setStreetAndHouseNumber(user.addressDTO.streetAndHouseNumber);
         setZIP(user.addressDTO.ZIP);
         setSettlement(user.addressDTO.settlement);
@@ -63,18 +61,17 @@ function OrderPage() {
         const orderInformation = {
             username: user.username,
             country: country,
-            settlement: setSettlement,
-            ZIP: ZIP,
+            settlement: settlement,
+            zipCode: ZIP,
             streetAndHouseNumber: streetAndHouseNumber,
         }
         orderInformation.dishList = orderList.map((item) => {
             const foodList = {
                 menuItemId: item.id,
-                menuItemAmount: item.amount,
+                quantity: item.amount,
             }
             return foodList;
         })
-        console.log(orderInformation);
         postOrder(orderInformation);
     }
 
