@@ -1,5 +1,6 @@
 package com.codecool.backend.controller;
 
+import com.codecool.backend.BackendApplication;
 import com.codecool.backend.modell.dto.food.AllergenDTO;
 import com.codecool.backend.modell.dto.food.CourseTypeDTO;
 import com.codecool.backend.modell.dto.food.DishDTO;
@@ -18,7 +19,7 @@ import java.util.Set;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@SpringBootTest(classes = BackendApplication.class, webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:application-integration-test.properties")
 public class MenuControllerIT {
