@@ -7,5 +7,5 @@ public class NewDishRequest {
     private String name;
     private String description;
     private String price;
-    private Object[] allergens = new Object[0];
+    private String[] allergens = new String[0];
 }

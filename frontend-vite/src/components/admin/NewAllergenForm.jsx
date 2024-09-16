@@ -1,8 +1,8 @@
 import {useState} from "react";
 
-async function addNewAllergen(allergen) {
+const addNewAllergen = (allergen) => {
     const token = localStorage.getItem("token");
-    await fetch("/api/admin/allergen", {
+    fetch("/api/admin/allergen", {
         method: "POST",
         headers: {
             'Authorization': `Bearer ${token}`,
