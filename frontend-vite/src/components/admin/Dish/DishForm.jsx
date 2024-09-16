@@ -1,16 +1,25 @@
 import {useEffect, useState} from "react";
 import styles from "./DishForm.module.css"
 
-async function addNewDish(dish) {
+const addNewDish = (dish) => {
     const token = localStorage.getItem("token");
-    await fetch("/api/admin/dish", {
+    fetch("/api/admin/dish", {
         method: "POST",
         headers: {
             'Authorization': `Bearer ${token}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify(dish)
-    })
+    });
+}
+
+const getAllAllergens = () => {
+    return fetch("/api/allergen/all", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then((res) => res.json());
 }
 
 
@@ -18,12 +27,13 @@ function DishForm() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0);
+    const [allergen, setAllergen] = useState("");
     const [allergens, setAllergens] = useState([]);
+    const [allAllergen, setAllAllergen] = useState([]);
 
 
     const addAllergenField = () => {
-        let newAllergen = {name: '', number: ''}
-        setAllergens([...allergens, newAllergen])
+        setAllergens([...allergens, allergen])
     }
     const removeAllergenField = (index) => {
         let data = [...allergens];
@@ -33,8 +43,9 @@ function DishForm() {
 
     const handleAllergensChange = (index, e) => {
         let data = [...allergens];
-        data[index][e.target.name] = e.target.value;
+        data[index] = e.target.value;
         setAllergens(data);
+        console.log(data)
     }
 
     const handleSubmit = (e) => {
@@ -42,6 +53,11 @@ function DishForm() {
         const dish = {name, description, price, allergens}
         addNewDish(dish)
     }
+
+    useEffect(() => {
+        getAllAllergens().then((allergenList) => setAllAllergen(allergenList));
+    }, []);
+
     return <>
         <form onSubmit={handleSubmit}>
             <div>
@@ -74,36 +90,20 @@ function DishForm() {
                 {allergens.map((input, index) => {
                     return (<>
                             <div key={index}>
-                                <label>Allergen name:<br/>
-                                    <input
-                                        value={input.name}
-                                        onChange={(e) => handleAllergensChange(index, e)}
-                                        name="name"
-                                        id="name"
-                                    /><br/>
-                                </label>
-                                <label>Allergen number:<br/>
-                                    <input
-                                        value={input.number}
-                                        type={"number"}
-                                        onChange={(e) => handleAllergensChange(index, e)}
-                                        name="number"
-                                        id="number"
-                                    /><br/>
-                                </label>
+                                <select onChange={(e)=>handleAllergensChange(index, e)}>
+                                    {allAllergen && allAllergen.map((allergen) => <option>{allergen.name}</option>)}
+                                </select>
                                 <button onClick={() => removeAllergenField(index)}
                                         className={styles.deleteAllergenButton}>-
                                 </button>
                             </div>
                         </>
-                    )
-                })
+                    )})
                 }
-                <button type={"button"} onClick={addAllergenField} className={styles.addAllergenButton}>Add allergen
+                <button type={"button"} onClick={addAllergenField} className={styles.addAllergenButton}>Add allergen to dish
                 </button>
             </div>
             <div>
-
                 <input type={"submit"} value={"Add dish"} className={styles.submitInput}/>
             </div>
         </form>

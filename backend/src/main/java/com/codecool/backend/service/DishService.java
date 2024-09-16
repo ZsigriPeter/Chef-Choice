@@ -40,14 +40,9 @@ public class DishService {
     }
 
     public void addNewDish(NewDishRequest dish) {
-        ObjectMapper mapper = new ObjectMapper();
         if (dishRepository.findByName(dish.getName()).isEmpty()) {
             Set<Allergen> allergens = Arrays.stream(dish.getAllergens())
-                    .map(object-> {
-                        System.out.println(object);
-                        return mapper.convertValue(object, AllergenDTO.class);
-                    })
-                    .map((allergen) -> allergenRepository.findByName(allergen.name()).orElseThrow())
+                    .map((allergen) -> allergenRepository.findByName(allergen).orElseThrow())
                     .collect(Collectors.toSet());
             Dish newDish = new Dish(dish.getName(), dish.getDescription(), parseDouble(dish.getPrice()), allergens);
             dishRepository.save(newDish);
