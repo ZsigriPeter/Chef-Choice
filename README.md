@@ -19,10 +19,13 @@ Chef Choice is a classic prepared meal delivery service, where clients can choos
 [//]: # (TODO - Add screenshot of weekly menu page)
 
 ## Technologies
-- Frontend: React-Vite, Vanilla CSS
-- Backend: Spring Boot with Spring Data JPA and Spring Security
-- Database: PostgreSQL
-- Docker Compose
+- [![React]][React-url] [![Vite]][Vite-url] [![JavaScript]][JavaScript-url]
+- [![CSS]][CSS-url]
+- [![Spring-Boot]][Spring-Boot-url] [![Java]][Java-url]
+- [![Postgres]][Postgres-url]
+- [![Git]][Git-url] [![Docker]][Docker-url]
+- [![Figma]][Figma-url]
+- [![IntelliJ-IDEA]][IntelliJ-IDEA-url]
 
 ## Developers
 - [Kriszta Antal](https://github.com/KrisztaAntal)
@@ -62,3 +65,36 @@ To set up the project locally:
 
 
 ![img_1.png](screenshots/img_1.png)
+
+[Postgres]: https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
+
+[Figma]: https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white
+[Figma-url]: https://www.figma.com/
+
+[Docker]: https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff
+[Docker-url]: https://www.docker.com/
+
+[React]: https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB
+[React-url]: https://react.dev/
+
+[Spring-Boot]: https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=fff
+[Spring-Boot-url]: https://spring.io/projects/spring-boot
+
+[Vite]: https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff
+[Vite-url]: https://vite.dev/guide/
+
+[IntelliJ-IDEA]: https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white
+[IntelliJ-IDEA-url]: https://www.jetbrains.com/idea/
+
+[CSS]: https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff
+[CSS-url]: https://en.wikipedia.org/wiki/CSS
+
+[JavaScript]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000
+[JavaScript-url]: https://en.wikipedia.org/wiki/JavaScript
+
+[Java]: https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white
+[Java-url]: https://www.java.com/en/
+
+[Git]: https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff
+[Git-url]: https://git-scm.com/
