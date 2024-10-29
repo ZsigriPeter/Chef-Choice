@@ -47,8 +47,8 @@ class AllergenServiceTest {
         verify(allergenRepository).save(allergenCaptor.capture());
         Allergen savedAllergen = allergenCaptor.getValue();
 
-        assertEquals(null, savedAllergen.getName(), "The allergen name does not match the expected value.");
-        assertEquals(0, savedAllergen.getNumber(), "The allergen number does not match the expected value.");
+        assertEquals(null, savedAllergen.getName());
+        assertEquals(0, savedAllergen.getNumber());
     }
 
 
