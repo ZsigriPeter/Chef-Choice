@@ -6,4 +6,7 @@ import lombok.Data;
 public class NewOrderItemRequest {
     private long menuItemId;
     private int quantity;
+
+    public NewOrderItemRequest(long menuItemId, int quantity) {
+    }
 }

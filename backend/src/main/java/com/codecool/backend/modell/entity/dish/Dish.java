@@ -33,4 +33,7 @@ public class Dish {
         this.price = price;
         this.allergens = new HashSet<>(allergens);
     }
+
+    public Dish(String name) {
+    }
 }

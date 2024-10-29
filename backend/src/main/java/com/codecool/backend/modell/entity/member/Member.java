@@ -2,6 +2,7 @@ package com.codecool.backend.modell.entity.member;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import java.util.HashSet;
@@ -25,6 +26,7 @@ public class Member {
     private String phone;
     @OneToOne
     private Address address;
+    @Setter
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "members_roles",
@@ -48,6 +50,7 @@ public class Member {
     public Member() {
     }
 
-    public Member(String name) {
+    public Member(String name,long id) {
     }
+
 }

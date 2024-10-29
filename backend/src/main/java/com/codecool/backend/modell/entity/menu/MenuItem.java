@@ -31,4 +31,7 @@ public class MenuItem {
         this.dayIndex = dayIndex;
         this.weeklyMenu = weeklyMenu;
     }
+
+    public MenuItem(long id, String code) {
+    }
 }
