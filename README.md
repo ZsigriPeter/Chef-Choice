@@ -43,6 +43,7 @@ Ensure the following are installed on your computer:
 ### Installation
 To set up the project locally:
 - Clone to local machine
+- .env file has example data so it could be used, in production it should be changed
 - Docker:
   - Navigate to root directory
   - `compose up`

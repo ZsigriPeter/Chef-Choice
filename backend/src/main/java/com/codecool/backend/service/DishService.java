@@ -2,14 +2,12 @@ package com.codecool.backend.service;
 
 import com.codecool.backend.controller.dish.DishAlreadyInDbException;
 import com.codecool.backend.modell.dto.DTOMapper;
-import com.codecool.backend.modell.dto.food.AllergenDTO;
 import com.codecool.backend.modell.dto.food.DishDTO;
 import com.codecool.backend.modell.entity.dish.Allergen;
 import com.codecool.backend.modell.entity.dish.Dish;
 import com.codecool.backend.modell.payload.NewDishRequest;
 import com.codecool.backend.repository.AllergenRepository;
 import com.codecool.backend.repository.DishRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

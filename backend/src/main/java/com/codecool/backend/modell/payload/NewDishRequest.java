@@ -8,4 +8,7 @@ public class NewDishRequest {
     private String description;
     private String price;
     private String[] allergens = new String[0];
+
+    public NewDishRequest(String pizza, String cheeseAndTomato, String s, String[] strings) {
+    }
 }
