@@ -16,8 +16,6 @@ Chef Choice is a classic prepared meal delivery service, where clients can choos
 - Filtering function (TODO)
 - Favorite dish and dish rating (TODO)
 
-[//]: # (TODO - Add screenshot of weekly menu page)
-
 ## Technologies
 - [![React]][React-url] [![Vite]][Vite-url] [![JavaScript]][JavaScript-url]
 - [![CSS]][CSS-url]
@@ -32,7 +30,6 @@ Chef Choice is a classic prepared meal delivery service, where clients can choos
 - [Levente Fülöp](https://github.com/fulopl)
 - [Péter Zsigri](https://github.com/ZsigriPeter)
 
-[//]: # (TODO - Replace with steps to run docker compose)
 ## How to run this app?
 ### Prerequisites
 
@@ -45,8 +42,22 @@ Ensure the following are installed on your computer:
 
 ### Installation
 To set up the project locally:
-
-[//]: # (TODO - Check correctness of text below)
+- Clone to local machine
+- Docker:
+  - Navigate to root directory
+  - `compose up`
+  - Open http://localhost:5173 in browser
+- Without Docker:
+  - Navigate to root directory
+  - `cd backend`
+  - `mvn clean package -DskipTests`
+  - `java -jar target/backend-0.0.1-SNAPSHOT.jar`
+  - Open new cmd
+  - Navigate to root directory
+  - `cd frontend-vite`
+  - `npm run dev`
+  - Open link in browser
+    
 ## How to use?  
 - Register a new user: selecting the "Log In" tab click the "Sign Up" button and fill the required fields, then click save.
 - Then login with the username / password combination given by you in the previous step
